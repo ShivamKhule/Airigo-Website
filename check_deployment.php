@@ -1,93 +1,46 @@
 <?php
-// check_deployment.php - Diagnostic script for Firebase connection
+// check_deployment.php - Advanced Diagnostic Script v2
 
 // Set headers for clean output
 header('Content-Type: text/html; charset=utf-8');
 
-echo "<!DOCTYPE html><html><head><title>Deployment Check</title>";
+echo "<!DOCTYPE html><html><head><title>Deployment Check v2</title>";
 echo "<style>body{font-family:sans-serif;line-height:1.6;padding:20px;max-width:800px;margin:0 auto;}";
-echo ".success{color:green;}.error{color:red;}.warning{color:orange;}";
+echo ".success{color:green;}.error{color:red;}.warning{color:orange;}.info{color:blue;}";
 echo "code{background:#f4f4f4;padding:2px 5px;border-radius:3px;}</style></head><body>";
 
-echo "<h1>🛠️ Firebase Deployment Diagnostic Tool</h1>";
+echo "<h1>🛠️ Firebase Deployment Diagnostic Tool v2</h1>";
 
-$checks = [];
+$credFile = __DIR__ . '/config/firebase-credentials.json';
 $errors = 0;
 
-// 1. Check PHP Version
-$phpVersion = phpversion();
-echo "<h2>🖥️ Server Environment</h2>";
-echo "<div>PHP Version: <strong>$phpVersion</strong> " . (version_compare($phpVersion, '7.4', '>=') ? "<span class='success'>✅ Supported</span>" : "<span class='error'>❌ Upgrade Required (>= 7.4)</span>") . "</div>";
+// 1. Check Server Time
+echo "<h2>CLOCK CHECK 🕒</h2>";
+$serverTime = time();
+echo "<div>Server Time: <strong>" . date('Y-m-d H:i:s', $serverTime) . "</strong> (Timestamp: $serverTime)</div>";
+echo "<p class='info'>Note: If this time is more than 5 minutes off from real UTC time, authentication will fail.</p>";
 
-// 2. Check Required Extensions
-echo "<h3>PHP Extensions</h3>";
-$requiredExtensions = ['curl', 'json', 'openssl', 'mbstring', 'bcmath', 'ctype'];
-foreach ($requiredExtensions as $ext) {
-    echo "<div>Checking extension: <strong>$ext</strong>... ";
-    if (extension_loaded($ext)) {
-        echo "<span class='success'>✅ Loaded</span></div>";
-    } else {
-        echo "<span class='error'>❌ Missing</span></div>";
-        $errors++;
-    }
+// 2. Load Credentials
+if (!file_exists($credFile)) {
+    die("<h2 class='error'>Credentials file not found.</h2>");
 }
 
-// 3. Check Vendor Directory
-echo "<h2>📂 File & Directory Check</h2>";
-$autoloadFile = __DIR__ . '/vendor/autoload.php';
-echo "<div>Looking for Composer Autoload at: <code>vendor/autoload.php</code>... ";
-if (file_exists($autoloadFile)) {
-    echo "<span class='success'>✅ Found</span></div>";
-} else {
-    echo "<span class='error'>❌ NOT FOUND!</span></div>";
-    echo "<p class='warning'>⚠️ Your 'vendor' folder is missing. The application requires it even if you don't use all libraries. Run 'composer install' or upload the 'vendor' folder.</p>";
-    $errors++;
-}
+$content = file_get_contents($credFile);
+$json = json_decode($content, true);
+$privateKey = $json['private_key']; // Default read
 
-// 4. Check Credentials File
-$credFile = __DIR__ . '/config/firebase-credentials.json';
-echo "<div>Looking for credentials at: <code>config/firebase-credentials.json</code>... ";
+// 3. Test Connectivity with Variations
+echo "<h2>🔥 Authentication Tests</h2>";
 
-if (file_exists($credFile)) {
-    echo "<span class='success'>✅ Found</span></div>";
+function testAuth($pkey, $email, $label)
+{
+    echo "<h3>Test: $label</h3>";
 
-    if (is_readable($credFile)) {
-        echo "<div>Read Permission: <span class='success'>✅ Readable</span></div>";
-
-        $content = file_get_contents($credFile);
-        $json = json_decode($content, true);
-
-        if ($json && isset($json['project_id']) && isset($json['private_key'])) {
-            echo "<div>JSON Content: <span class='success'>✅ Valid Service Account JSON</span></div>";
-            echo "<div>Project ID: <strong>" . htmlspecialchars($json['project_id']) . "</strong></div>";
-        } else {
-            echo "<div>JSON Content: <span class='error'>❌ Invalid JSON structure</span></div>";
-            $errors++;
-        }
-    } else {
-        echo "<div>Read Permission: <span class='error'>❌ Not Readable (Check Permissions, should be 644)</span></div>";
-        $errors++;
-    }
-} else {
-    echo "<span class='error'>❌ NOT FOUND!</span></div>";
-    echo "<p class='warning'>⚠️ You most likely forgot to upload <code>config/firebase-credentials.json</code> to the server.</p>";
-    $errors++;
-}
-
-// 5. Test Connectivity
-echo "<h2>🌐 Connectivity Test</h2>";
-
-if ($errors === 0 || (file_exists($credFile) && !file_exists($autoloadFile))) {
-    // We attempt connectivity even if vendor is missing, just to prove credentials work
     try {
-        echo "<div>Attempting to generate token...</div>";
-
-        // Inline simple test from FirestoreDB logic to isolate issues
-        $credentials = json_decode(file_get_contents($credFile), true);
         $header = json_encode(['typ' => 'JWT', 'alg' => 'RS256']);
         $now = time();
         $payload = json_encode([
-            'iss' => $credentials['client_email'],
+            'iss' => $email,
             'scope' => 'https://www.googleapis.com/auth/datastore',
             'aud' => 'https://oauth2.googleapis.com/token',
             'exp' => $now + 3600,
@@ -98,57 +51,77 @@ if ($errors === 0 || (file_exists($credFile) && !file_exists($autoloadFile))) {
         $base64Payload = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($payload));
 
         $signature = '';
-        $signResult = openssl_sign($base64Header . '.' . $base64Payload, $signature, $credentials['private_key'], 'SHA256');
+        $success = openssl_sign($base64Header . '.' . $base64Payload, $signature, $pkey, 'SHA256');
 
-        if ($signResult) {
-            echo "<div>OpenSSL Signing: <span class='success'>✅ Success</span></div>";
-
-            $base64Signature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
-            $jwt = $base64Header . '.' . $base64Payload . '.' . $base64Signature;
-
-            // Curl request
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://oauth2.googleapis.com/token');
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
-                'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-                'assertion' => $jwt
-            ]));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            // Disable SSL verification strictly for diagnosis if certificate bundle is missing on cheap hosting
-            // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-
-            $response = curl_exec($ch);
-            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            $curlError = curl_error($ch);
-            curl_close($ch);
-
-            if ($httpCode === 200) {
-                $data = json_decode($response, true);
-                if (isset($data['access_token'])) {
-                    echo "<div>Google Auth: <span class='success'>✅ Access Token Received</span> (Token length: " . strlen($data['access_token']) . ")</div>";
-                    echo "<h3>🎉 Firebase Connection is WORKING!</h3>";
-                    echo "<p>If you see this message, your server IS connecting to Firebase. If jobs are still not loading, check your database rules or collection names.</p>";
-                } else {
-                    echo "<div>Google Auth: <span class='error'>❌ Invalid Response</span> - " . htmlspecialchars($response) . "</div>";
-                }
-            } else {
-                echo "<div>Google Auth: <span class='error'>❌ HTTP $httpCode</span></div>";
-                if ($curlError)
-                    echo "<div>Curl Error: $curlError</div>";
-                echo "<div>Response: " . htmlspecialchars($response) . "</div>";
-            }
-
-        } else {
-            echo "<div>OpenSSL Signing: <span class='error'>❌ Failed</span> (Check Private Key format)</div>";
+        if (!$success) {
+            echo "<div>OpenSSL Sign: <span class='error'>❌ Failed locally</span></div>";
+            while ($msg = openssl_error_string())
+                echo "<small>OpenSSL Error: $msg</small><br>";
+            return false;
         }
 
+        echo "<div>OpenSSL Sign: <span class='success'>✅ Signed Locally</span></div>";
+
+        $base64Signature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
+        $jwt = $base64Header . '.' . $base64Payload . '.' . $base64Signature;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://oauth2.googleapis.com/token');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+            'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+            'assertion' => $jwt
+        ]));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($httpCode === 200) {
+            echo "<div>Google Response: <span class='success'>✅ SUCCESS! (HTTP 200)</span></div>";
+            echo "<p><strong>Valid Token Received.</strong></p>";
+            return true;
+        } else {
+            echo "<div>Google Response: <span class='error'>❌ Failed (HTTP $httpCode)</span></div>";
+            echo "<div>Response: " . htmlspecialchars($response) . "</div>";
+            return false;
+        }
     } catch (Exception $e) {
-        echo "<div>Exception: <span class='error'>" . $e->getMessage() . "</span></div>";
+        echo "<div>Exception: " . $e->getMessage() . "</div>";
+        return false;
     }
-} else {
-    echo "<div>Skipping connectivity test due to critical missing files.</div>";
 }
+
+// Attempt 1: Original Key
+$result1 = testAuth($privateKey, $json['client_email'], "Original Key");
+
+if (!$result1) {
+    echo "<hr><div><i>Trying Key Repairs...</i></div>";
+
+    // Repair Strategy 1: Replace literal \n with NEWLINE char, case-insensitive
+    $repair1 = str_replace('\n', "\n", $privateKey);
+    $repair1 = str_replace('\r', '', $repair1); // remove CRs
+
+    if ($repair1 !== $privateKey) {
+        testAuth($repair1, $json['client_email'], "Repaired Key (Fixed Newlines)");
+    } else {
+        echo "<div> Repair 1 skipped (no change)</div>";
+    }
+
+    // Repair Strategy 2: Double unescape just in case
+    $repair2 = stripcslashes($privateKey);
+    if ($repair2 !== $privateKey && $repair2 !== $repair1) {
+        testAuth($repair2, $json['client_email'], "Repaired Key (stripcslashes)");
+    }
+}
+
+echo "<h2>Next Steps</h2>";
+echo "<ul>";
+echo "<li>If 'Original Key' passed, everything is fine. Delete this script.</li>";
+echo "<li>If a 'Repaired Key' passed, your private key file has formatting issues. Correct it in your code or re-upload the file.</li>";
+echo "<li>If <strong>HTTP 400 Invalid Grant</strong> persists, verify Server Time vs Real Time.</li>";
+echo "</ul>";
 
 echo "</body></html>";
 ?>
