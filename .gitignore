@@ -1,0 +1,66 @@
+# Environment files
+.env
+.env.local
+.env.production
+
+# Firebase credentials
+config/firebase-credentials.json
+
+# Logs
+logs/
+*.log
+
+# Cache
+cache/
+*.cache
+
+# Uploads
+assets/uploads/*
+!assets/uploads/.gitkeep
+
+# Composer
+vendor/
+composer.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*.sql
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Node modules (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+dist/
+build/
+
+# Coverage reports
+coverage/
+
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml
+
+# Sass
+.sass-cache/
+
+# Compiled CSS (if using preprocessors)
+*.css.map

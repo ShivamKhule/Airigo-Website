@@ -1,0 +1,38 @@
+{
+  "rules": {
+    "users": {
+      "$userId": {
+        ".read": "auth != null && auth.uid == $userId",
+        ".write": "auth != null && auth.uid == $userId",
+        "applications": {
+          ".indexOn": ["job_id", "status", "applied_date"]
+        }
+      }
+    },
+    "jobs": {
+      "$jobId": {
+        ".read": "true",
+        ".write": "auth != null && (data.child('recruiter_id').val() == auth.uid || newData.child('recruiter_id').val() == auth.uid)",
+        "applications": {
+          ".read": "auth != null && data.parent().child('recruiter_id').val() == auth.uid",
+          ".write": "auth != null && data.parent().child('recruiter_id').val() == auth.uid"
+        }
+      },
+      ".indexOn": ["status", "category", "location", "job_type", "created_at"]
+    },
+    "applications": {
+      "$applicationId": {
+        ".read": "auth != null && (data.child('user_id').val() == auth.uid || data.child('job_recruiter_id').val() == auth.uid)",
+        ".write": "auth != null && (data.child('user_id').val() == auth.uid || newData.child('user_id').val() == auth.uid || data.child('job_recruiter_id').val() == auth.uid)",
+        ".indexOn": ["job_id", "user_id", "status", "applied_date"]
+      }
+    },
+    "companies": {
+      "$companyId": {
+        ".read": "true",
+        ".write": "auth != null && data.child('owner_id').val() == auth.uid"
+      },
+      ".indexOn": ["name", "industry", "location"]
+    }
+  }
+}
