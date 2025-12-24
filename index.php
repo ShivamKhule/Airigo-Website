@@ -182,6 +182,130 @@ $stats = [
     </div>
 </section>
 
+<!-- Features Section -->
+<section id="features" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <!-- Section Header -->
+        <div class="text-center mb-12 md:mb-20 max-w-3xl mx-auto">
+            <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-blue-100 text-blue-700">
+                Why Choose Us
+            </span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Everything you need to succeed
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600">
+                Powerful tools and features designed to make your job search or hiring process seamless and effective.
+            </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Feature Card 1 -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 md:p-8">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 md:w-7 md:h-7 text-blue-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    Smart Job Matching
+                </h3>
+                <p class="text-gray-600 text-base md:text-lg">
+                    Our AI-powered algorithm matches you with the most relevant opportunities based on your skills and
+                    preferences.
+                </p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 md:p-8">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 md:w-7 md:h-7 text-purple-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    Instant Applications
+                </h3>
+                <p class="text-gray-600 text-base md:text-lg">
+                    Apply to multiple jobs with a single click. Your profile and resume are always ready to go.
+                </p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 md:p-8">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-green-100 flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 md:w-7 md:h-7 text-green-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    Real-time Tracking
+                </h3>
+                <p class="text-gray-600 text-base md:text-lg">
+                    Track your applications in real-time. Get instant notifications when recruiters view your profile.
+                </p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 md:p-8">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-yellow-100 flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 md:w-7 md:h-7 text-yellow-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    Advanced Filters
+                </h3>
+                <p class="text-gray-600 text-base md:text-lg">
+                    Filter by salary, location, experience level, and more to find exactly what you're looking for.
+                </p>
+            </div>
+
+            <!-- Feature Card 5 -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 md:p-8">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-cyan-100 flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 md:w-7 md:h-7 text-cyan-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    Insightful Analytics
+                </h3>
+                <p class="text-gray-600 text-base md:text-lg">
+                    Get detailed insights about your job search or recruiting performance with our analytics dashboard.
+                </p>
+            </div>
+
+            <!-- Feature Card 6 -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 md:p-8">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-red-100 flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 md:w-7 md:h-7 text-red-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    Secure & Private
+                </h3>
+                <p class="text-gray-600 text-base md:text-lg">
+                    Your data is protected with enterprise-grade security. We never share your information without
+                    consent.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- How It Works -->
 <section class="py-16 bg-gray-50">
@@ -226,47 +350,51 @@ $stats = [
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php if (!empty($featuredJobs)): ?>
                 <?php foreach ($featuredJobs as $job): ?>
-                <div class="border border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition duration-300">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="flex items-center">
-                            <?php if (!empty($job['imageUrl'])): ?>
-                            <img src="<?php echo htmlspecialchars($job['imageUrl']); ?>" 
-                                 alt="<?php echo htmlspecialchars($job['companyName']); ?>" 
-                                 class="w-12 h-12 rounded-lg object-cover mr-4">
-                            <?php else: ?>
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-building text-blue-600"></i>
+                    <div
+                        class="border border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center">
+                                <?php if (!empty($job['imageUrl'])): ?>
+                                    <img src="<?php echo htmlspecialchars($job['imageUrl']); ?>"
+                                        alt="<?php echo htmlspecialchars($job['companyName']); ?>"
+                                        class="w-12 h-12 rounded-lg object-cover mr-4">
+                                <?php else: ?>
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fas fa-building text-blue-600"></i>
+                                    </div>
+                                <?php endif; ?>
+                                <div>
+                                    <h3 class="font-bold text-lg text-gray-800">
+                                        <?php echo htmlspecialchars($job['designation']); ?>
+                                    </h3>
+                                    <p class="text-gray-600"><?php echo htmlspecialchars($job['companyName']); ?></p>
+                                </div>
                             </div>
+                            <?php if ($job['isUrgentHiring']): ?>
+                                <span class="bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-full">URGENT</span>
                             <?php endif; ?>
-                            <div>
-                                <h3 class="font-bold text-lg text-gray-800"><?php echo htmlspecialchars($job['designation']); ?></h3>
-                                <p class="text-gray-600"><?php echo htmlspecialchars($job['companyName']); ?></p>
+                        </div>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                <span><?php echo htmlspecialchars($job['location']); ?></span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-briefcase mr-2 text-blue-500"></i>
+                                <span><?php echo htmlspecialchars($job['jobType']); ?></span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-money-bill-wave mr-2 text-blue-500"></i>
+                                <span><?php echo htmlspecialchars($job['ctc']); ?></span>
                             </div>
                         </div>
-                        <?php if ($job['isUrgentHiring']): ?>
-                        <span class="bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-full">URGENT</span>
-                        <?php endif; ?>
+
+                        <a href="<?php echo $baseUrl; ?>/job-details.php?id=<?php echo $job['id']; ?>"
+                            class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 font-medium transition duration-300">
+                            View Details
+                        </a>
                     </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center text-gray-600">
-                            <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
-                            <span><?php echo htmlspecialchars($job['location']); ?></span>
-                        </div>
-                        <div class="flex items-center text-gray-600">
-                            <i class="fas fa-briefcase mr-2 text-blue-500"></i>
-                            <span><?php echo htmlspecialchars($job['jobType']); ?></span>
-                        </div>
-                        <div class="flex items-center text-gray-600">
-                            <i class="fas fa-money-bill-wave mr-2 text-blue-500"></i>
-                            <span><?php echo htmlspecialchars($job['ctc']); ?></span>
-                        </div>
-                    </div>
-                    
-                    <a href="<?php echo $baseUrl; ?>/job-details.php?id=<?php echo $job['id']; ?>" class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 font-medium transition duration-300">
-                        View Details
-                    </a>
-                </div>
                 <?php endforeach; ?>
             <?php else: ?>
                 <div class="col-span-3 text-center py-8">

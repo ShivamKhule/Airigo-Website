@@ -1,11 +1,13 @@
 <?php
 require_once 'firebase-config.php';
 
-class FirestoreDB {
+class FirestoreDB
+{
     private $projectId = 'airigo-jobs';
     private $fallbackData;
-    
-    public function __construct() {
+
+    public function __construct()
+    {
         $this->fallbackData = [
             'jobs' => [
                 'job1' => [
@@ -123,16 +125,17 @@ class FirestoreDB {
             ]
         ];
     }
-    
-    private function getAccessToken() {
+
+    private function getAccessToken()
+    {
         try {
             $credentialsPath = __DIR__ . '/firebase-credentials.json';
             if (!file_exists($credentialsPath)) {
                 return null;
             }
-            
+
             $credentials = json_decode(file_get_contents($credentialsPath), true);
-            
+
             $header = json_encode(['typ' => 'JWT', 'alg' => 'RS256']);
             $now = time();
             $payload = json_encode([
@@ -142,16 +145,16 @@ class FirestoreDB {
                 'exp' => $now + 3600,
                 'iat' => $now
             ]);
-            
+
             $base64Header = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($header));
             $base64Payload = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($payload));
-            
+
             $signature = '';
             openssl_sign($base64Header . '.' . $base64Payload, $signature, $credentials['private_key'], 'SHA256');
             $base64Signature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($signature));
-            
+
             $jwt = $base64Header . '.' . $base64Payload . '.' . $base64Signature;
-            
+
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://oauth2.googleapis.com/token');
             curl_setopt($ch, CURLOPT_POST, true);
@@ -160,10 +163,10 @@ class FirestoreDB {
                 'assertion' => $jwt
             ]));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            
+
             $response = curl_exec($ch);
             curl_close($ch);
-            
+
             $data = json_decode($response, true);
             return $data['access_token'] ?? null;
         } catch (Exception $e) {
@@ -171,15 +174,16 @@ class FirestoreDB {
             return null;
         }
     }
-    
-    private function fetchFromFirestore($collection) {
+
+    private function fetchFromFirestore($collection)
+    {
         $token = $this->getAccessToken();
         if (!$token) {
             return null;
         }
-        
+
         $url = "https://firestore.googleapis.com/v1/projects/{$this->projectId}/databases/(default)/documents/{$collection}";
-        
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -187,18 +191,18 @@ class FirestoreDB {
             'Authorization: Bearer ' . $token,
             'Content-Type: application/json'
         ]);
-        
+
         $response = curl_exec($ch);
         curl_close($ch);
-        
+
         $data = json_decode($response, true);
-        
+
         if (isset($data['documents'])) {
             $results = [];
             foreach ($data['documents'] as $doc) {
                 $id = basename($doc['name']);
                 $fields = $doc['fields'] ?? [];
-                
+
                 $item = ['id' => $id];
                 foreach ($fields as $key => $value) {
                     if (isset($value['stringValue'])) {
@@ -206,20 +210,21 @@ class FirestoreDB {
                     } elseif (isset($value['booleanValue'])) {
                         $item[$key] = $value['booleanValue'];
                     } elseif (isset($value['integerValue'])) {
-                        $item[$key] = (int)$value['integerValue'];
+                        $item[$key] = (int) $value['integerValue'];
                     }
                 }
                 $results[$id] = $item;
             }
             return $results;
         }
-        
+
         return null;
     }
-    
-    public function getJobs($filters = [], $limit = 10, $offset = 0) {
+
+    public function getJobs($filters = [], $limit = 10, $offset = 0)
+    {
         $jobs = $this->fetchFromFirestore('jobs') ?: $this->fallbackData['jobs'];
-        
+
         // Ensure all jobs have IDs
         $jobsWithIds = [];
         foreach ($jobs as $id => $job) {
@@ -227,41 +232,53 @@ class FirestoreDB {
             $jobsWithIds[$id] = $job;
         }
         $jobs = $jobsWithIds;
-        
+
         // Apply filters
         if (!empty($filters['category'])) {
-            $jobs = array_filter($jobs, function($job) use ($filters) {
+            $jobs = array_filter($jobs, function ($job) use ($filters) {
                 return isset($job['category']) && $job['category'] === $filters['category'];
             });
         }
-        
+
         return array_slice(array_values($jobs), 0, $limit);
     }
-    
-    public function getJobById($jobId) {
+
+    public function getJobById($jobId)
+    {
         $jobs = $this->fetchFromFirestore('jobs') ?: $this->fallbackData['jobs'];
-        
-        // First try to find by exact ID
+
+        // First try to find by exact ID (Document Key)
         if (isset($jobs[$jobId])) {
             $job = $jobs[$jobId];
             $job['id'] = $jobId;
             return $job;
         }
-        
-        // If not found, try to find by any job ID that contains the search term
+
+        // Search by 'id' field within the job data
+        foreach ($jobs as $key => $job) {
+            $currentId = $job['id'] ?? $key;
+            if ($currentId === $jobId) {
+                // Found the job by its internal ID field
+                $job['id'] = $currentId;
+                return $job;
+            }
+        }
+
+        // Allow partial match on document ID (legacy fallback)
         foreach ($jobs as $id => $job) {
             if (strpos($id, $jobId) !== false) {
                 $job['id'] = $id;
                 return $job;
             }
         }
-        
+
         return null;
     }
-    
-    public function searchJobs($keyword = '', $location = '', $limit = 10) {
+
+    public function searchJobs($keyword = '', $location = '', $limit = 10)
+    {
         $jobs = $this->fetchFromFirestore('jobs') ?: $this->fallbackData['jobs'];
-        
+
         $results = [];
         foreach ($jobs as $id => $job) {
             if (!empty($keyword)) {
@@ -271,7 +288,7 @@ class FirestoreDB {
                     continue;
                 }
             }
-            
+
             if (!empty($location)) {
                 $locationText = strtolower($location);
                 $jobLocation = strtolower($job['location']);
@@ -279,23 +296,51 @@ class FirestoreDB {
                     continue;
                 }
             }
-            
+
             $results[] = $job;
-            if (count($results) >= $limit) break;
+            if (count($results) >= $limit)
+                break;
         }
-        
+
         return $results;
     }
-    
+
     // Simplified methods for other operations
-    public function getJobseekerByEmail($email) { return null; }
-    public function createJobseeker($email, $data) { return true; }
-    public function updateJobseeker($email, $data) { return true; }
-    public function getRecruiterByEmail($email) { return null; }
-    public function createRecruiter($email, $data) { return true; }
-    public function updateRecruiter($email, $data) { return true; }
-    public function createApplication($jobId, $jobseekerEmail, $data) { return true; }
-    public function getApplication($jobId, $jobseekerEmail) { return null; }
-    public function toggleFavorite($jobId, $jobseekerEmail) { return true; }
+    public function getJobseekerByEmail($email)
+    {
+        return null;
+    }
+    public function createJobseeker($email, $data)
+    {
+        return true;
+    }
+    public function updateJobseeker($email, $data)
+    {
+        return true;
+    }
+    public function getRecruiterByEmail($email)
+    {
+        return null;
+    }
+    public function createRecruiter($email, $data)
+    {
+        return true;
+    }
+    public function updateRecruiter($email, $data)
+    {
+        return true;
+    }
+    public function createApplication($jobId, $jobseekerEmail, $data)
+    {
+        return true;
+    }
+    public function getApplication($jobId, $jobseekerEmail)
+    {
+        return null;
+    }
+    public function toggleFavorite($jobId, $jobseekerEmail)
+    {
+        return true;
+    }
 }
 ?>
