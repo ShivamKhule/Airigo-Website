@@ -9,7 +9,7 @@ $sampleData = [
             'companyName' => 'Emirates Airlines',
             'location' => 'Dubai, UAE',
             'jobType' => 'Full-time',
-            'category' => 'Aviation',
+            'category' => 'Airline',
             'ctc' => '50000-80000',
             'skills' => 'Customer Service, Safety Protocols',
             'description' => 'Join our cabin crew team and provide exceptional service to passengers.',
@@ -22,7 +22,7 @@ $sampleData = [
             'companyName' => 'Qatar Airways',
             'location' => 'Doha, Qatar',
             'jobType' => 'Full-time',
-            'category' => 'Aviation',
+            'category' => 'Airline',
             'ctc' => '120000-200000',
             'skills' => 'Commercial Pilot License, Flight Experience',
             'description' => 'Experienced pilot needed for international flights.',
@@ -50,7 +50,7 @@ $sampleData = [
             'fullName' => 'John Doe',
             'phone' => '+1234567890',
             'experience' => '5 years',
-            'skills' => 'Customer Service, Aviation',
+            'skills' => 'Customer Service, Airline',
             'createdAt' => date('Y-m-d H:i:s')
         ]
     ],

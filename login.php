@@ -2,30 +2,36 @@
 require_once __DIR__ . '/includes/auth.php';
 $auth = new Auth();
 
+$error = '';
+$selectedRole = $_POST['role'] ?? $_GET['role'] ?? 'jobseeker'; // Default to jobseeker
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate CSRF token
     if (!isset($_POST['csrf_token']) || !validateCSRFToken($_POST['csrf_token'])) {
         $error = "Invalid request. Please try again.";
     } else {
         $email = sanitizeInput($_POST['email'] ?? '');
         $password = $_POST['password'] ?? '';
+        $role = $_POST['role'] ?? 'jobseeker';
         
         if (empty($email) || empty($password)) {
             $error = "Please fill in all fields.";
+            $selectedRole = $role; // Preserve selection on error
         } else {
-            $result = $auth->login($email, $password);
+            // Pass role to your login method if needed (modify Auth::login accordingly)
+            $result = $auth->login($email, $password, $role);
             
             if ($result['success']) {
-                // Log successful login
                 logActivity($_SESSION['user_id'], 'login', ['ip' => getClientIP()]);
-                
-                // Redirect to dashboard or intended page
-                $redirect = $_GET['redirect'] ?? 'dashboard.php';
+                // Optional: redirect based on role
+                $dashboard = ($_SESSION['user_role'] ?? $role) === 'recruiter' 
+                    ? 'recruiter/dashboard.php' 
+                    : 'seeker/dashboard.php';
+                $redirect = $_GET['redirect'] ?? $dashboard;
                 header('Location: ' . $redirect);
                 exit();
             } else {
                 $error = $result['error'];
-                // Log failed login attempt
+                $selectedRole = $role; // Preserve on failed login
                 logActivity(null, 'failed_login', ['email' => $email, 'ip' => getClientIP()]);
             }
         }
@@ -36,78 +42,150 @@ $pageTitle = "Login";
 require_once 'includes/header.php';
 ?>
 
-<div class="min-h-[80vh] flex items-center justify-center bg-gray-50 py-12 px-4">
-    <div class="max-w-md w-full space-y-8">
-        <div>
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                Sign in to your account
-            </h2>
-            <p class="mt-2 text-center text-sm text-gray-600">
-                Or
-                <a href="<?php echo $baseUrl; ?>/register.php" class="font-medium text-blue-600 hover:text-blue-500">
-                    create a new account
-                </a>
-            </p>
+<div class="min-h-screen bg-slate-50 flex items-center justify-center p-6">
+    <div class="w-full max-w-md">
+        <!-- Logo -->
+        <a href="<?php echo $baseUrl; ?>/" class="flex items-center justify-center gap-2 mb-8">
+            <i class="fas fa-briefcase text-4xl text-blue-600"></i>
+            <span class="font-bold text-2xl tracking-tight text-gray-900">Airigojobs</span>
+        </a>
+
+        <!-- Login Card -->
+        <div class="bg-white   shadow-md">
+            <div class="px-8 pt-8 pb-6 text-center border-b border-gray-200">
+                <h3 class="text-2xl font-semibold text-gray-900">Welcome Back</h3>
+                <p class="mt-2 text-sm text-gray-600">Enter your credentials to access your account</p>
+            </div>
+
+            <div class="p-8">
+                <?php if ($error): ?>
+                    <div class="mb-6 p-4 bg-red-50 border border-red-200 text-red-700   text-sm">
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php echo displayFlashMessages(); ?>
+
+                <form method="POST" action="" class="space-y-6">
+                    <?php echo csrfField(); ?>
+                    <input type="hidden" name="role" id="role-input" value="<?php echo htmlspecialchars($selectedRole); ?>">
+
+                    <!-- Role Selection -->
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <button
+                            type="button"
+                            onclick="selectRole('jobseeker')"
+                            class="py-3 px-4   font-medium transition-colors <?php echo $selectedRole === 'jobseeker' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'; ?>"
+                        >
+                            <i class="fas fa-user mr-2"></i>
+                            Job Seeker
+                        </button>
+                        <button
+                            type="button"
+                            onclick="selectRole('recruiter')"
+                            class="py-3 px-4   font-medium transition-colors <?php echo $selectedRole === 'recruiter' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'; ?>"
+                        >
+                            <i class="fas fa-building mr-2"></i>
+                            Recruiter
+                        </button>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="space-y-2">
+                        <label for="email" class="block text-sm font-medium text-gray-700">
+                            Email
+                        </label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            placeholder="Enter your email"
+                            class="w-full h-12 px-4 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-400"
+                            value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>"
+                        />
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="space-y-2">
+                        <label for="password" class="block text-sm font-medium text-gray-700">
+                            Password
+                        </label>
+                        <div class="relative">
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                required
+                                placeholder="Enter your password"
+                                class="w-full h-12 px-4 pr-12 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-400"
+                            />
+                            <button
+                                type="button"
+                                onclick="togglePassword()"
+                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
+                            >
+                                <i id="eye-icon" class="fas fa-eye text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium   transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                        Sign In
+                    </button>
+                </form>
+
+                <!-- Register Link -->
+                <p class="mt-8 text-center text-sm text-gray-600">
+                    Don't have an account? 
+                    <a href="<?php echo $baseUrl; ?>/register.php" class="font-medium text-blue-600 hover:underline">
+                        Create one
+                    </a>
+                </p>
+            </div>
         </div>
-        
-        <?php echo displayFlashMessages(); ?>
-        
-        <form class="mt-8 space-y-6" action="" method="POST">
-            <?php echo csrfField(); ?>
-            <div class="rounded-md shadow-sm -space-y-px">
-                <div>
-                    <label for="email" class="sr-only">Email address</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required 
-                           class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                           placeholder="Email address">
-                </div>
-                <div>
-                    <label for="password" class="sr-only">Password</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" required 
-                           class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                           placeholder="Password">
-                </div>
-            </div>
-
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <input id="remember-me" name="remember-me" type="checkbox" 
-                           class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                    <label for="remember-me" class="ml-2 block text-sm text-gray-900">
-                        Remember me
-                    </label>
-                </div>
-
-                <div class="text-sm">
-                    <a href="<?php echo $baseUrl; ?>/forgot-password.php" class="font-medium text-blue-600 hover:text-blue-500">
-                        Forgot your password?
-                    </a>
-                </div>
-            </div>
-
-            <div>
-                <button type="submit" 
-                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-                        <i class="fas fa-sign-in-alt text-blue-500 group-hover:text-blue-400"></i>
-                    </span>
-                    Sign in
-                </button>
-            </div>
-            
-            <div class="text-center">
-                <span class="text-gray-600">Or sign in as:</span>
-                <div class="mt-4 flex justify-center space-x-4">
-                    <a href="<?php echo $baseUrl; ?>/login.php?role=jobseeker" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
-                        <i class="fas fa-user mr-2"></i>Job Seeker
-                    </a>
-                    <a href="<?php echo $baseUrl; ?>/login.php?role=recruiter" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
-                        <i class="fas fa-building mr-2"></i>Recruiter
-                    </a>
-                </div>
-            </div>
-        </form>
     </div>
 </div>
+
+<script>
+function selectRole(role) {
+    document.getElementById('role-input').value = role;
+
+    // Update button styles
+    document.querySelectorAll('[onclick^="selectRole"]').forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'text-white');
+        btn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+    });
+
+    event.target.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+    event.target.classList.add('bg-blue-600', 'text-white');
+}
+
+function togglePassword() {
+    const passwordField = document.getElementById('password');
+    const eyeIcon = document.getElementById('eye-icon');
+    
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordField.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    }
+}
+
+// On page load, highlight the currently selected role
+document.addEventListener('DOMContentLoaded', () => {
+    const selected = '<?php echo addslashes($selectedRole); ?>';
+    document.querySelector(`[onclick="selectRole('${selected}')"]`)?.classList.add('bg-blue-600', 'text-white');
+    document.querySelector(`[onclick="selectRole('${selected}')"]`)?.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+});
+</script>
 
 <?php require_once 'includes/footer.php'; ?>

@@ -64,21 +64,21 @@ require_once 'includes/header.php';
         </div>
         
         <?php if (isset($success)): ?>
-        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3   relative" role="alert">
             <span class="block sm:inline"><?php echo $success; ?></span>
             <a href="manage-jobs.php" class="font-bold underline ml-2">View your jobs</a>
         </div>
         <?php endif; ?>
         
         <?php if (isset($error)): ?>
-        <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3   relative" role="alert">
             <span class="block sm:inline"><?php echo $error; ?></span>
         </div>
         <?php endif; ?>
         
         <form method="POST" action="" class="space-y-8">
             <!-- Basic Information -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="bg-white   shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Basic Information</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -89,7 +89,7 @@ require_once 'includes/header.php';
                         <input type="text" 
                                name="title" 
                                required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                placeholder="e.g., Senior Pilot, Flight Attendant">
                     </div>
                     
@@ -100,7 +100,7 @@ require_once 'includes/header.php';
                         <input type="text" 
                                name="company" 
                                required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                placeholder="Your company name">
                     </div>
                     
@@ -110,7 +110,7 @@ require_once 'includes/header.php';
                         </label>
                         <select name="category" 
                                 required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <option value="">Select Category</option>
                             <option value="airline">Airline Jobs</option>
                             <option value="hospitality">Hospitality</option>
@@ -129,7 +129,7 @@ require_once 'includes/header.php';
                         </label>
                         <select name="job_type" 
                                 required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <option value="">Select Job Type</option>
                             <option value="full-time">Full-time</option>
                             <option value="part-time">Part-time</option>
@@ -147,7 +147,7 @@ require_once 'includes/header.php';
                         <input type="text" 
                                name="location" 
                                required
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                placeholder="e.g., New York, USA or Remote">
                     </div>
                     
@@ -159,7 +159,7 @@ require_once 'includes/header.php';
                                name="deadline" 
                                required
                                min="<?php echo date('Y-m-d'); ?>"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                 </div>
                 
@@ -168,20 +168,20 @@ require_once 'includes/header.php';
                     <label class="flex items-center">
                         <input type="checkbox" 
                                name="urgent"
-                               class="h-4 w-4 text-blue-600 rounded">
+                               class="h-4 w-4 text-blue-600  ">
                         <span class="ml-2 text-gray-700">Urgent Hiring</span>
                     </label>
                     <label class="flex items-center">
                         <input type="checkbox" 
                                name="remote"
-                               class="h-4 w-4 text-blue-600 rounded">
+                               class="h-4 w-4 text-blue-600  ">
                         <span class="ml-2 text-gray-700">Remote Position</span>
                     </label>
                 </div>
             </div>
             
             <!-- Salary Information -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="bg-white   shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Salary & Compensation</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -193,7 +193,7 @@ require_once 'includes/header.php';
                             <span class="absolute left-3 top-3 text-gray-500">$</span>
                             <input type="number" 
                                    name="salary_min" 
-                                   class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full pl-8 pr-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="e.g., 50000">
                         </div>
                     </div>
@@ -206,7 +206,7 @@ require_once 'includes/header.php';
                             <span class="absolute left-3 top-3 text-gray-500">$</span>
                             <input type="number" 
                                    name="salary_max" 
-                                   class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full pl-8 pr-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="e.g., 100000">
                         </div>
                     </div>
@@ -216,7 +216,7 @@ require_once 'includes/header.php';
                             Salary Type
                         </label>
                         <select name="salary_type" 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <option value="yearly">Per Year</option>
                             <option value="monthly">Per Month</option>
                             <option value="weekly">Per Week</option>
@@ -227,7 +227,7 @@ require_once 'includes/header.php';
             </div>
             
             <!-- Requirements -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="bg-white   shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Requirements & Qualifications</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -238,7 +238,7 @@ require_once 'includes/header.php';
                         <input type="number" 
                                name="experience_min" 
                                min="0"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                placeholder="e.g., 3">
                     </div>
                     
@@ -249,7 +249,7 @@ require_once 'includes/header.php';
                         <input type="number" 
                                name="experience_max" 
                                min="0"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                placeholder="e.g., 10">
                     </div>
                     
@@ -258,7 +258,7 @@ require_once 'includes/header.php';
                             Education Level
                         </label>
                         <select name="education" 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <option value="">Any Education</option>
                             <option value="high-school">High School</option>
                             <option value="associate">Associate Degree</option>
@@ -275,7 +275,7 @@ require_once 'includes/header.php';
                     </label>
                     <input type="text" 
                            name="skills" 
-                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                           class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                            placeholder="e.g., Leadership, Communication, Project Management">
                 </div>
                 
@@ -286,13 +286,13 @@ require_once 'includes/header.php';
                     <textarea name="requirements" 
                               rows="6"
                               required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                               placeholder="List the specific requirements for this position"></textarea>
                 </div>
             </div>
             
             <!-- Job Description -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="bg-white   shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Job Description</h2>
                 
                 <div class="mb-6">
@@ -302,7 +302,7 @@ require_once 'includes/header.php';
                     <textarea name="description" 
                               rows="8"
                               required
-                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                               placeholder="Describe the job responsibilities, day-to-day tasks, and what makes this position exciting"></textarea>
                 </div>
                 
@@ -312,22 +312,22 @@ require_once 'includes/header.php';
                     </label>
                     <textarea name="benefits" 
                               rows="4"
-                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                               placeholder="List the benefits and perks offered with this position"></textarea>
                 </div>
             </div>
             
             <!-- Preview & Submit -->
-            <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="bg-white   shadow-lg p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Preview & Submit</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Job Preview -->
                     <div>
                         <h3 class="text-lg font-bold text-gray-800 mb-4">Job Preview</h3>
-                        <div class="border border-gray-200 rounded-lg p-6">
+                        <div class="border border-gray-200   p-6">
                             <div class="flex items-start mb-4">
-                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <div class="w-12 h-12 bg-blue-100   flex items-center justify-center mr-4">
                                     <i class="fas fa-briefcase text-blue-600"></i>
                                 </div>
                                 <div>
@@ -356,7 +356,7 @@ require_once 'includes/header.php';
                     <div>
                         <h3 class="text-lg font-bold text-gray-800 mb-4">Submission Options</h3>
                         <div class="space-y-4">
-                            <label class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-blue-500 cursor-pointer">
+                            <label class="flex items-start p-4 border border-gray-200   hover:border-blue-500 cursor-pointer">
                                 <input type="radio" name="publish_option" value="publish" checked class="mt-1 mr-3">
                                 <div>
                                     <p class="font-medium text-gray-800">Publish Immediately</p>
@@ -364,7 +364,7 @@ require_once 'includes/header.php';
                                 </div>
                             </label>
                             
-                            <label class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-blue-500 cursor-pointer">
+                            <label class="flex items-start p-4 border border-gray-200   hover:border-blue-500 cursor-pointer">
                                 <input type="radio" name="publish_option" value="draft" class="mt-1 mr-3">
                                 <div>
                                     <p class="font-medium text-gray-800">Save as Draft</p>
@@ -372,7 +372,7 @@ require_once 'includes/header.php';
                                 </div>
                             </label>
                             
-                            <label class="flex items-start p-4 border border-gray-200 rounded-lg hover:border-blue-500 cursor-pointer">
+                            <label class="flex items-start p-4 border border-gray-200   hover:border-blue-500 cursor-pointer">
                                 <input type="radio" name="publish_option" value="schedule" class="mt-1 mr-3">
                                 <div>
                                     <p class="font-medium text-gray-800">Schedule for Later</p>
@@ -389,17 +389,17 @@ require_once 'includes/header.php';
                         <input type="checkbox" 
                                id="terms" 
                                required
-                               class="mt-1 mr-3 h-4 w-4 text-blue-600 rounded">
+                               class="mt-1 mr-3 h-4 w-4 text-blue-600  ">
                         <label for="terms" class="text-gray-700">
                             I confirm that this job posting complies with all applicable laws and regulations. I understand that misrepresentation may result in account suspension.
                         </label>
                     </div>
                     
                     <div class="flex justify-end space-x-4">
-                        <button type="button" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50">
+                        <button type="button" class="border border-gray-300 text-gray-700 px-8 py-3   font-medium hover:bg-gray-50">
                             Save Draft
                         </button>
-                        <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700">
+                        <button type="submit" class="bg-blue-600 text-white px-8 py-3   font-medium hover:bg-blue-700">
                             <i class="fas fa-paper-plane mr-2"></i>Publish Job
                         </button>
                     </div>
@@ -408,14 +408,14 @@ require_once 'includes/header.php';
         </form>
         
         <!-- Pricing Information -->
-        <div class="mt-8 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl p-8 text-white">
+        <div class="mt-8 bg-gradient-to-r from-blue-500 to-blue-700   p-8 text-white">
             <div class="flex flex-col md:flex-row md:items-center justify-between">
                 <div>
                     <h3 class="text-xl font-bold mb-2">Premium Job Posting</h3>
                     <p class="text-blue-100">Get 3x more applications with our premium features</p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300">
+                    <a href="#" class="bg-white text-blue-600 px-8 py-3   font-bold hover:bg-gray-100 transition duration-300">
                         <i class="fas fa-crown mr-2"></i>Upgrade Now
                     </a>
                 </div>

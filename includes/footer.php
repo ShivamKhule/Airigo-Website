@@ -7,25 +7,25 @@
                 <!-- Company Info -->
                 <div>
                     <a href="<?php echo $baseUrl; ?>/" class="flex items-center space-x-2 mb-6">
-                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <div class="w-10 h-10 bg-blue-600   flex items-center justify-center">
                             <i class="fas fa-plane text-white text-xl"></i>
                         </div>
                         <span class="text-2xl font-bold text-white">Airigo<span class="text-blue-400">jobs</span></span>
                     </a>
                     <p class="text-gray-400 mb-6">
-                        Connecting talented professionals with top employers in the aviation and hospitality industry.
+                        Connecting talented professionals with top employers in the airline and hospitality industry.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600">
+                        <a href="#" class="w-10 h-10 bg-gray-800   flex items-center justify-center hover:bg-blue-600">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400">
+                        <a href="#" class="w-10 h-10 bg-gray-800   flex items-center justify-center hover:bg-blue-400">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-700">
+                        <a href="#" class="w-10 h-10 bg-gray-800   flex items-center justify-center hover:bg-blue-700">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600">
+                        <a href="#" class="w-10 h-10 bg-gray-800   flex items-center justify-center hover:bg-pink-600">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
@@ -50,9 +50,9 @@
                     <ul class="space-y-3">
                         <li><a href="<?php echo $baseUrl; ?>/register.php?type=jobseeker" class="text-gray-400 hover:text-white">Create Account</a></li>
                         <li><a href="<?php echo $baseUrl; ?>/job-search.php" class="text-gray-400 hover:text-white">Search Jobs</a></li>
-                        <li><a href="<?php echo $baseUrl; ?>/career-advice.php" class="text-gray-400 hover:text-white">Career Advice</a></li>
-                        <li><a href="<?php echo $baseUrl; ?>/resume-tips.php" class="text-gray-400 hover:text-white">Resume Tips</a></li>
-                        <li><a href="<?php echo $baseUrl; ?>/interview-prep.php" class="text-gray-400 hover:text-white">Interview Preparation</a></li>
+                        <!-- <li><a href="<?php echo $baseUrl; ?>/career-advice.php" class="text-gray-400 hover:text-white">Career Advice</a></li> -->
+                        <!-- <li><a href="<?php echo $baseUrl; ?>/resume-tips.php" class="text-gray-400 hover:text-white">Resume Tips</a></li> -->
+                        <!-- <li><a href="<?php echo $baseUrl; ?>/interview-prep.php" class="text-gray-400 hover:text-white">Interview Preparation</a></li> -->
                         <li><a href="<?php echo $baseUrl; ?>/faq.php" class="text-gray-400 hover:text-white">FAQ</a></li>
                     </ul>
                 </div>
@@ -62,8 +62,8 @@
                     <h3 class="text-lg font-bold mb-6">For Employers</h3>
                     <ul class="space-y-3">
                         <li><a href="<?php echo $baseUrl; ?>/register.php?type=recruiter" class="text-gray-400 hover:text-white">Post Jobs</a></li>
-                        <li><a href="<?php echo $baseUrl; ?>/pricing.php" class="text-gray-400 hover:text-white">Pricing</a></li>
-                        <li><a href="<?php echo $baseUrl; ?>/recruitment-solutions.php" class="text-gray-400 hover:text-white">Recruitment Solutions</a></li>
+                        <!-- <li><a href="<?php echo $baseUrl; ?>/pricing.php" class="text-gray-400 hover:text-white">Pricing</a></li> -->
+                        <!-- <li><a href="<?php echo $baseUrl; ?>/recruitment-solutions.php" class="text-gray-400 hover:text-white">Recruitment Solutions</a></li> -->
                         <li><a href="<?php echo $baseUrl; ?>/employer-faq.php" class="text-gray-400 hover:text-white">Employer FAQ</a></li>
                         <li><a href="<?php echo $baseUrl; ?>/contact.php" class="text-gray-400 hover:text-white">Contact Sales</a></li>
                     </ul>
@@ -80,8 +80,8 @@
                     <div class="flex">
                         <input type="email" 
                                placeholder="Your email address" 
-                               class="px-6 py-3 bg-gray-800 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-80">
-                        <button class="bg-blue-600 text-white px-6 py-3 rounded-r-lg hover:bg-blue-700 font-medium">
+                               class="px-6 py-3 bg-gray-800 text-white   focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-80">
+                        <button class="bg-blue-600 text-white px-6 py-3   hover:bg-blue-700 font-medium">
                             Subscribe
                         </button>
                     </div>
@@ -91,7 +91,7 @@
             <!-- Copyright -->
             <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
                 <p>&copy; <?php echo date('Y'); ?> Airigojobs. All rights reserved.</p>
-                <p class="mt-2 text-sm">Designed with ❤️ for the aviation and hospitality industry</p>
+                <p class="mt-2 text-sm">Designed with ❤️ for the airline and hospitality industry</p>
             </div>
         </div>
     </footer>

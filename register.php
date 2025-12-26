@@ -102,13 +102,13 @@ require_once 'includes/header.php';
         
         <!-- Role Selection -->
         <div class="flex justify-center mb-8">
-            <div class="inline-flex rounded-lg border border-gray-200 p-1">
+            <div class="inline-flex   border border-gray-200 p-1">
                 <a href="?type=jobseeker" 
-                   class="px-6 py-3 rounded-md font-medium <?php echo $type === 'jobseeker' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600'; ?>">
+                   class="px-6 py-3   font-medium <?php echo $type === 'jobseeker' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600'; ?>">
                     <i class="fas fa-user mr-2"></i>Job Seeker
                 </a>
                 <a href="?type=recruiter" 
-                   class="px-6 py-3 rounded-md font-medium <?php echo $type === 'recruiter' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600'; ?>">
+                   class="px-6 py-3   font-medium <?php echo $type === 'recruiter' ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600'; ?>">
                     <i class="fas fa-building mr-2"></i>Employer
                 </a>
             </div>
@@ -116,7 +116,7 @@ require_once 'includes/header.php';
         
         <?php echo displayFlashMessages(); ?>
         
-        <div class="bg-white rounded-xl shadow-lg p-8">
+        <div class="bg-white   shadow-lg p-8">
             <form class="space-y-6" action="" method="POST">
                 <?php echo csrfField(); ?>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -132,7 +132,7 @@ require_once 'includes/header.php';
                                    id="full_name" 
                                    name="full_name" 
                                    required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="Enter your full name">
                         </div>
                         
@@ -144,7 +144,7 @@ require_once 'includes/header.php';
                                    id="email" 
                                    name="email" 
                                    required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="Enter your email address">
                         </div>
                         
@@ -156,7 +156,7 @@ require_once 'includes/header.php';
                                    id="phone" 
                                    name="phone" 
                                    required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="Enter your phone number">
                         </div>
                         
@@ -169,7 +169,7 @@ require_once 'includes/header.php';
                                    id="company_name" 
                                    name="company_name" 
                                    required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="Enter your company name">
                         </div>
                         
@@ -179,7 +179,7 @@ require_once 'includes/header.php';
                             </label>
                             <select id="company_size" 
                                     name="company_size"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 <option value="">Select company size</option>
                                 <option value="1-10">1-10 employees</option>
                                 <option value="11-50">11-50 employees</option>
@@ -204,7 +204,7 @@ require_once 'includes/header.php';
                                    name="password" 
                                    required
                                    minlength="8"
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="Create a password (min. 8 characters)">
                             <p class="mt-1 text-sm text-gray-500">Use at least 8 characters with a mix of letters, numbers & symbols</p>
                         </div>
@@ -217,7 +217,7 @@ require_once 'includes/header.php';
                                    id="confirm_password" 
                                    name="confirm_password" 
                                    required
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                   class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                    placeholder="Confirm your password">
                         </div>
                         
@@ -229,7 +229,7 @@ require_once 'includes/header.php';
                                            name="terms" 
                                            type="checkbox" 
                                            required
-                                           class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                           class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300  ">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="terms" class="font-medium text-gray-700">
@@ -245,7 +245,7 @@ require_once 'includes/header.php';
                         <!-- Submit Button -->
                         <div class="pt-4">
                             <button type="submit" 
-                                    class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300">
+                                    class="w-full bg-blue-600 text-white py-4 px-6   font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300">
                                 <i class="fas fa-user-plus mr-2"></i>
                                 Create <?php echo $type === 'jobseeker' ? 'Job Seeker' : 'Employer'; ?> Account
                             </button>
@@ -267,24 +267,24 @@ require_once 'includes/header.php';
         
         <!-- Benefits Section -->
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow text-center">
-                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="bg-white p-6   shadow text-center">
+                <div class="bg-blue-100 w-16 h-16   flex items-center justify-center mx-auto mb-4">
                     <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">Secure Platform</h4>
                 <p class="text-gray-600">Your data is protected with enterprise-grade security</p>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow text-center">
-                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="bg-white p-6   shadow text-center">
+                <div class="bg-blue-100 w-16 h-16   flex items-center justify-center mx-auto mb-4">
                     <i class="fas fa-bolt text-blue-600 text-2xl"></i>
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">Quick Setup</h4>
                 <p class="text-gray-600">Get started in minutes with our easy registration process</p>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow text-center">
-                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="bg-white p-6   shadow text-center">
+                <div class="bg-blue-100 w-16 h-16   flex items-center justify-center mx-auto mb-4">
                     <i class="fas fa-headset text-blue-600 text-2xl"></i>
                 </div>
                 <h4 class="font-bold text-lg mb-2 text-gray-800">24/7 Support</h4>

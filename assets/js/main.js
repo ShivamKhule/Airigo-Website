@@ -135,7 +135,7 @@ function showSessionWarning() {
     if (document.querySelector('.session-warning')) return;
     
     const warning = document.createElement('div');
-    warning.className = 'session-warning fixed bottom-4 right-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg shadow-lg z-50';
+    warning.className = 'session-warning fixed bottom-4 right-4 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3   shadow-lg z-50';
     warning.innerHTML = `
         <div class="flex items-center">
             <i class="fas fa-exclamation-triangle mr-3"></i>
@@ -148,10 +148,10 @@ function showSessionWarning() {
             </button>
         </div>
         <div class="mt-2 flex justify-end space-x-2">
-            <button onclick="extendSession()" class="bg-yellow-600 text-white px-3 py-1 rounded text-sm hover:bg-yellow-700">
+            <button onclick="extendSession()" class="bg-yellow-600 text-white px-3 py-1   text-sm hover:bg-yellow-700">
                 Stay Logged In
             </button>
-            <button onclick="logout()" class="bg-gray-600 text-white px-3 py-1 rounded text-sm hover:bg-gray-700">
+            <button onclick="logout()" class="bg-gray-600 text-white px-3 py-1   text-sm hover:bg-gray-700">
                 Logout Now
             </button>
         </div>
@@ -237,7 +237,7 @@ function initTooltips() {
  */
 function createTooltip(text, parent) {
     const tooltip = document.createElement('div');
-    tooltip.className = 'fixed bg-gray-900 text-white px-3 py-2 rounded-lg text-sm z-50 pointer-events-none';
+    tooltip.className = 'fixed bg-gray-900 text-white px-3 py-2   text-sm z-50 pointer-events-none';
     tooltip.textContent = text;
     
     // Add arrow
@@ -582,11 +582,11 @@ function initFileUploads() {
                 
                 reader.onload = function(e) {
                     if (file.type.startsWith('image/')) {
-                        previewElement.innerHTML = `<img src="${e.target.result}" class="max-w-full h-auto rounded" alt="Preview">`;
+                        previewElement.innerHTML = `<img src="${e.target.result}" class="max-w-full h-auto  " alt="Preview">`;
                     } else {
                         const icon = getFileIcon(file.name);
                         previewElement.innerHTML = `
-                            <div class="flex items-center p-4 bg-gray-100 rounded-lg">
+                            <div class="flex items-center p-4 bg-gray-100  ">
                                 <i class="${icon} text-3xl mr-4"></i>
                                 <div>
                                     <p class="font-medium">${file.name}</p>
@@ -757,7 +757,7 @@ function showNotification(message, type = 'info', duration = 5000) {
     };
     
     notification.innerHTML = `
-        <div class="rounded-lg border px-4 py-3 ${typeClasses[type] || typeClasses.info}">
+        <div class="  border px-4 py-3 ${typeClasses[type] || typeClasses.info}">
             <div class="flex items-center">
                 <i class="fas ${getNotificationIcon(type)} mr-3"></i>
                 <span>${message}</span>
@@ -982,7 +982,7 @@ window.addEventListener('scroll', function() {
 function initScrollToTop() {
     const button = document.createElement('button');
     button.id = 'scroll-to-top';
-    button.className = 'fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 hidden z-40';
+    button.className = 'fixed bottom-4 right-4 bg-blue-600 text-white p-3   shadow-lg hover:bg-blue-700 transition duration-300 hidden z-40';
     button.innerHTML = '<i class="fas fa-chevron-up"></i>';
     button.onclick = scrollToTop;
     document.body.appendChild(button);

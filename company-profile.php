@@ -67,7 +67,7 @@ require_once 'includes/header.php';
                     <p class="text-gray-600">Manage your company information and branding</p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <a href="dashboard.php" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                    <a href="dashboard.php" class="bg-blue-600 text-white px-6 py-3   font-semibold hover:bg-blue-700 transition duration-300">
                         <i class="fas fa-tachometer-alt mr-2"></i>Back to Dashboard
                     </a>
                 </div>
@@ -75,13 +75,13 @@ require_once 'includes/header.php';
         </div>
 
         <?php if (isset($success)): ?>
-        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3   relative" role="alert">
             <span class="block sm:inline"><?php echo $success; ?></span>
         </div>
         <?php endif; ?>
         
         <?php if (isset($error)): ?>
-        <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3   relative" role="alert">
             <span class="block sm:inline"><?php echo $error; ?></span>
         </div>
         <?php endif; ?>
@@ -90,9 +90,9 @@ require_once 'includes/header.php';
             <!-- Left Sidebar -->
             <div class="lg:col-span-1">
                 <!-- Company Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                <div class="bg-white   shadow-lg p-6 mb-6">
                     <div class="text-center">
-                        <div class="w-32 h-32 bg-blue-600 rounded-lg flex items-center justify-center mx-auto mb-6">
+                        <div class="w-32 h-32 bg-blue-600   flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-building text-white text-5xl"></i>
                         </div>
                         <h2 class="text-xl font-bold text-gray-900 mb-2"><?php echo $companyData['company_name'] ?? 'Your Company'; ?></h2>
@@ -130,7 +130,7 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- Profile Stats -->
-                <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="bg-white   shadow-lg p-6">
                     <h3 class="font-bold text-gray-800 mb-4">Company Stats</h3>
                     <div class="space-y-3">
                         <div class="flex justify-between">
@@ -154,7 +154,7 @@ require_once 'includes/header.php';
                     <div class="mt-6 pt-6 border-t">
                         <h4 class="font-medium text-gray-700 mb-3">Verification Status</h4>
                         <div class="flex items-center">
-                            <div class="bg-green-100 p-2 rounded-lg mr-3">
+                            <div class="bg-green-100 p-2   mr-3">
                                 <i class="fas fa-check-circle text-green-600"></i>
                             </div>
                             <div>
@@ -170,7 +170,7 @@ require_once 'includes/header.php';
             <div class="lg:col-span-3">
                 <form method="POST" action="" class="space-y-8">
                     <!-- Basic Information -->
-                    <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="bg-white   shadow-lg p-8">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">Basic Information</h2>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -182,7 +182,7 @@ require_once 'includes/header.php';
                                        name="company_name" 
                                        value="<?php echo htmlspecialchars($companyData['company_name'] ?? ''); ?>"
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div>
@@ -191,7 +191,7 @@ require_once 'includes/header.php';
                                 </label>
                                 <select name="company_size" 
                                         required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="">Select company size</option>
                                     <option value="1-10" <?php echo ($companyData['company_size'] ?? '') === '1-10' ? 'selected' : ''; ?>>1-10 employees</option>
                                     <option value="11-50" <?php echo ($companyData['company_size'] ?? '') === '11-50' ? 'selected' : ''; ?>>11-50 employees</option>
@@ -207,13 +207,10 @@ require_once 'includes/header.php';
                                 </label>
                                 <select name="industry" 
                                         required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="">Select Industry</option>
                                     <option value="airline" <?php echo ($companyData['industry'] ?? '') === 'airline' ? 'selected' : ''; ?>>Airline</option>
                                     <option value="hospitality" <?php echo ($companyData['industry'] ?? '') === 'hospitality' ? 'selected' : ''; ?>>Hospitality</option>
-                                    <option value="aviation-services" <?php echo ($companyData['industry'] ?? '') === 'aviation-services' ? 'selected' : ''; ?>>Aviation Services</option>
-                                    <option value="travel-tourism" <?php echo ($companyData['industry'] ?? '') === 'travel-tourism' ? 'selected' : ''; ?>>Travel & Tourism</option>
-                                    <option value="airport-management" <?php echo ($companyData['industry'] ?? '') === 'airport-management' ? 'selected' : ''; ?>>Airport Management</option>
                                     <option value="other" <?php echo ($companyData['industry'] ?? '') === 'other' ? 'selected' : ''; ?>>Other</option>
                                 </select>
                             </div>
@@ -225,14 +222,14 @@ require_once 'includes/header.php';
                                 <input type="url" 
                                        name="website" 
                                        value="<?php echo htmlspecialchars($companyData['website'] ?? ''); ?>"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                        placeholder="https://example.com">
                             </div>
                         </div>
                     </div>
 
                     <!-- Contact Information -->
-                    <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="bg-white   shadow-lg p-8">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -244,7 +241,7 @@ require_once 'includes/header.php';
                                        name="email" 
                                        value="<?php echo htmlspecialchars($companyData['email'] ?? ''); ?>"
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div>
@@ -255,7 +252,7 @@ require_once 'includes/header.php';
                                        name="phone" 
                                        value="<?php echo htmlspecialchars($companyData['phone'] ?? ''); ?>"
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div>
@@ -265,7 +262,7 @@ require_once 'includes/header.php';
                                 <input type="text" 
                                        name="address" 
                                        value="<?php echo htmlspecialchars($companyData['address'] ?? ''); ?>"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div class="grid grid-cols-2 gap-4">
@@ -276,7 +273,7 @@ require_once 'includes/header.php';
                                     <input type="text" 
                                            name="city" 
                                            value="<?php echo htmlspecialchars($companyData['city'] ?? ''); ?>"
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                           class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">
@@ -285,14 +282,14 @@ require_once 'includes/header.php';
                                     <input type="text" 
                                            name="country" 
                                            value="<?php echo htmlspecialchars($companyData['country'] ?? ''); ?>"
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                           class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Company Description -->
-                    <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="bg-white   shadow-lg p-8">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">Company Description</h2>
                         
                         <div class="space-y-6">
@@ -303,7 +300,7 @@ require_once 'includes/header.php';
                                 <textarea name="about" 
                                           rows="4"
                                           required
-                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                          class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                           placeholder="Describe your company, history, and what you do"><?php echo htmlspecialchars($companyData['about'] ?? ''); ?></textarea>
                             </div>
                             
@@ -313,7 +310,7 @@ require_once 'includes/header.php';
                                 </label>
                                 <textarea name="mission" 
                                           rows="3"
-                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                          class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                           placeholder="What is your company's mission and core values?"><?php echo htmlspecialchars($companyData['mission'] ?? ''); ?></textarea>
                             </div>
                             
@@ -323,7 +320,7 @@ require_once 'includes/header.php';
                                 </label>
                                 <textarea name="culture" 
                                           rows="3"
-                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                          class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                           placeholder="Describe your company culture and work environment"><?php echo htmlspecialchars($companyData['culture'] ?? ''); ?></textarea>
                             </div>
                             
@@ -333,14 +330,14 @@ require_once 'includes/header.php';
                                 </label>
                                 <textarea name="benefits" 
                                           rows="3"
-                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                          class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                           placeholder="List the benefits you offer to employees"><?php echo htmlspecialchars($companyData['benefits'] ?? ''); ?></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- Social Media Links -->
-                    <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="bg-white   shadow-lg p-8">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">Social Media Links</h2>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -349,13 +346,13 @@ require_once 'includes/header.php';
                                     LinkedIn
                                 </label>
                                 <div class="flex">
-                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500 rounded-l-lg">
+                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500  ">
                                         <i class="fab fa-linkedin"></i>
                                     </span>
                                     <input type="url" 
                                            name="linkedin" 
                                            value="<?php echo htmlspecialchars($companyData['social_links']['linkedin'] ?? ''); ?>"
-                                           class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                           class="flex-1 px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                            placeholder="https://linkedin.com/company/your-company">
                                 </div>
                             </div>
@@ -365,13 +362,13 @@ require_once 'includes/header.php';
                                     Twitter
                                 </label>
                                 <div class="flex">
-                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500 rounded-l-lg">
+                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500  ">
                                         <i class="fab fa-twitter"></i>
                                     </span>
                                     <input type="url" 
                                            name="twitter" 
                                            value="<?php echo htmlspecialchars($companyData['social_links']['twitter'] ?? ''); ?>"
-                                           class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                           class="flex-1 px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                            placeholder="https://twitter.com/yourcompany">
                                 </div>
                             </div>
@@ -381,13 +378,13 @@ require_once 'includes/header.php';
                                     Facebook
                                 </label>
                                 <div class="flex">
-                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500 rounded-l-lg">
+                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500  ">
                                         <i class="fab fa-facebook"></i>
                                     </span>
                                     <input type="url" 
                                            name="facebook" 
                                            value="<?php echo htmlspecialchars($companyData['social_links']['facebook'] ?? ''); ?>"
-                                           class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                           class="flex-1 px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                            placeholder="https://facebook.com/yourcompany">
                                 </div>
                             </div>
@@ -397,13 +394,13 @@ require_once 'includes/header.php';
                                     Instagram
                                 </label>
                                 <div class="flex">
-                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500 rounded-l-lg">
+                                    <span class="inline-flex items-center px-3 py-3 border border-r-0 border-gray-300 bg-gray-50 text-gray-500  ">
                                         <i class="fab fa-instagram"></i>
                                     </span>
                                     <input type="url" 
                                            name="instagram" 
                                            value="<?php echo htmlspecialchars($companyData['social_links']['instagram'] ?? ''); ?>"
-                                           class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                           class="flex-1 px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                            placeholder="https://instagram.com/yourcompany">
                                 </div>
                             </div>
@@ -411,12 +408,12 @@ require_once 'includes/header.php';
                     </div>
 
                     <!-- Company Logo -->
-                    <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="bg-white   shadow-lg p-8">
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">Company Logo & Branding</h2>
                         
                         <div class="flex flex-col md:flex-row items-start md:items-center">
                             <div class="mb-6 md:mb-0 md:mr-8">
-                                <div class="w-48 h-48 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <div class="w-48 h-48 bg-blue-100   flex items-center justify-center">
                                     <i class="fas fa-building text-blue-600 text-6xl"></i>
                                 </div>
                             </div>
@@ -428,16 +425,16 @@ require_once 'includes/header.php';
                                 </p>
                                 
                                 <div class="flex space-x-4">
-                                    <label class="cursor-pointer bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                                    <label class="cursor-pointer bg-blue-600 text-white px-8 py-3   hover:bg-blue-700 font-medium">
                                         <i class="fas fa-upload mr-2"></i>Upload Logo
                                         <input type="file" accept="image/*" class="hidden" id="logoUpload">
                                     </label>
-                                    <button type="button" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 font-medium">
+                                    <button type="button" class="border border-gray-300 text-gray-700 px-6 py-3   hover:bg-gray-50 font-medium">
                                         Remove Logo
                                     </button>
                                 </div>
                                 
-                                <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200  ">
                                     <div class="flex items-start">
                                         <i class="fas fa-lightbulb text-yellow-600 text-xl mr-3 mt-1"></i>
                                         <div>
@@ -457,10 +454,10 @@ require_once 'includes/header.php';
 
                     <!-- Submit Button -->
                     <div class="flex justify-end space-x-4">
-                        <button type="button" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50">
+                        <button type="button" class="border border-gray-300 text-gray-700 px-8 py-3   font-medium hover:bg-gray-50">
                             Cancel
                         </button>
-                        <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700">
+                        <button type="submit" class="bg-blue-600 text-white px-8 py-3   font-medium hover:bg-blue-700">
                             <i class="fas fa-save mr-2"></i>Save Changes
                         </button>
                     </div>
@@ -478,7 +475,7 @@ document.getElementById('logoUpload').addEventListener('change', function(event)
         const reader = new FileReader();
         reader.onload = function(e) {
             const logoContainer = document.querySelector('.bg-blue-100');
-            logoContainer.innerHTML = `<img src="${e.target.result}" class="w-full h-full object-contain rounded-xl" alt="Company Logo">`;
+            logoContainer.innerHTML = `<img src="${e.target.result}" class="w-full h-full object-contain  " alt="Company Logo">`;
         };
         reader.readAsDataURL(file);
     }

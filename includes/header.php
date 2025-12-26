@@ -29,16 +29,16 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="<?php echo isset($pageDescription) ? htmlspecialchars($pageDescription) : 'Find your dream job in aviation and hospitality industry with Airigojobs. Connect with top employers and discover thousands of opportunities.'; ?>">
+        content="<?php echo isset($pageDescription) ? htmlspecialchars($pageDescription) : 'Find your dream job in airline and hospitality industry with Airigojobs. Connect with top employers and discover thousands of opportunities.'; ?>">
     <meta name="keywords"
-        content="jobs, aviation jobs, hospitality jobs, pilot jobs, flight attendant, airport jobs, career">
+        content="jobs, airline jobs, hospitality jobs, pilot jobs, flight attendant, airport jobs, career">
     <meta name="author" content="Airigojobs">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title"
         content="<?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) . ' - Airigojobs' : 'Airigojobs - Find Your Dream Job'; ?>">
     <meta property="og:description"
-        content="<?php echo isset($pageDescription) ? htmlspecialchars($pageDescription) : 'Find your dream job in aviation and hospitality industry'; ?>">
+        content="<?php echo isset($pageDescription) ? htmlspecialchars($pageDescription) : 'Find your dream job in airline and hospitality industry'; ?>">
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?php echo getCurrentPageUrl(); ?>">
 
@@ -124,13 +124,21 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                 <!-- Logo -->
                 <a href="<?php echo $baseUrl; ?>/" class="flex items-center space-x-3 group">
                     <div
-                        class="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
-                        <i class="fas fa-plane-departure text-white text-2xl"></i>
+                        class="w-20 h-12 rounded-lg bg-gradient-to-br from-primary-100 to-primary-300 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 overflow-hidden">
+                        <!-- Correct HTML image tag -->
+                        <!-- <img src="<?php echo $baseUrl; ?>/assets/images/airigojobslogo.png" alt="AirigoJobs Logo"
+                            class="w-12 h-12 object-contain" /> -->
+                        <img src="<?php echo $baseUrl; ?>/assets/logos/Airigo jobs logo Trnsp.png" alt="AirigoJobs Logo"
+                            class="w-16 h-16 object-contain" />
                     </div>
+
                     <div class="flex flex-col">
-                        <span class="text-2xl font-bold text-primary-700 leading-tight">Airigo<span
-                                class="text-secondary-800">jobs</span></span>
-                        <span class="text-xs text-secondary-600 font-medium -mt-1">Aviation & Hospitality Careers</span>
+                        <span class="text-2xl font-bold text-primary-700 leading-tight">
+                            Airigo<span class="text-secondary-800">Jobs</span>
+                        </span>
+                        <span class="text-xs text-secondary-600 font-medium -mt-1">
+                            Airline & Hospitality Careers
+                        </span>
                     </div>
                 </a>
 
@@ -139,27 +147,35 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                     <?php if (!$isLoggedIn): ?>
                         <!-- Public Navigation -->
                         <a href="<?php echo $baseUrl; ?>/"
-                            class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                             <i class="fas fa-home text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>Home</span>
                         </a>
                         <a href="<?php echo $baseUrl; ?>/browse-jobs.php"
-                            class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                             <i class="fas fa-briefcase text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>Browse Jobs</span>
                         </a>
                         <a href="<?php echo $baseUrl; ?>/job-search.php"
-                            class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                             <i class="fas fa-search text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>Search Jobs</span>
                         </a>
-                        <a href="#companies"
-                            class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                        <?php if (!$isLoggedIn): ?>
+                        <a href="<?php echo $baseUrl; ?>/companies.php"
+                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                             <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>Companies</span>
                         </a>
-                        <a href="#about"
-                            class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                    <?php else: ?>
+                        <a href="<?php echo $baseUrl; ?>/company-profile.php"
+                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                            <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
+                            <span>Companies</span>
+                        </a>
+                    <?php endif; ?>
+                        <a href="<?php echo $baseUrl; ?>/about.php"
+                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                             <i class="fas fa-info-circle text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>About</span>
                         </a>
@@ -167,11 +183,11 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                         <!-- Auth Buttons -->
                         <div class="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-200">
                             <a href="<?php echo $baseUrl; ?>/login.php"
-                                class="px-5 py-2.5 rounded-lg text-primary-600 hover:text-primary-700 font-medium transition-all duration-200 hover:bg-primary-50 border border-primary-100">
+                                class="px-5 py-2.5 text-primary-600 hover:text-primary-700 font-medium transition-all duration-200 hover:bg-primary-50 border border-primary-100">
                                 Login
                             </a>
                             <a href="<?php echo $baseUrl; ?>/register.php?type=jobseeker"
-                                class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                                class="px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
                                 Sign Up Free
                             </a>
                         </div>
@@ -180,50 +196,50 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                         <div class="flex items-center space-x-1">
                             <?php if ($userRole == 'jobseeker'): ?>
                                 <a href="<?php echo $baseUrl; ?>/dashboard.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group relative">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group relative">
                                     <i class="fas fa-chart-line text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Dashboard</span>
                                 </a>
                                 <a href="<?php echo $baseUrl; ?>/job-search.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group relative">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group relative">
                                     <i class="fas fa-search text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Find Jobs</span>
                                     <span
-                                        class="absolute -top-1 -right-1 bg-primary-500 text-white text-xs px-2 py-0.5 rounded-full animate-pulse-slow">New</span>
+                                        class="absolute -top-1 -right-1 bg-primary-500 text-white text-xs px-2 py-0.5 animate-pulse-slow">New</span>
                                 </a>
                                 <a href="<?php echo $baseUrl; ?>/applications.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group relative">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group relative">
                                     <i class="fas fa-file-alt text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Applications</span>
                                 </a>
                                 <a href="<?php echo $baseUrl; ?>/profile.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                                     <i class="fas fa-user-circle text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Profile</span>
                                 </a>
                             <?php else: ?>
                                 <a href="<?php echo $baseUrl; ?>/dashboard.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                                     <i class="fas fa-chart-line text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Dashboard</span>
                                 </a>
                                 <a href="<?php echo $baseUrl; ?>/post-job.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                                     <i class="fas fa-plus-circle text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Post Job</span>
                                 </a>
                                 <a href="<?php echo $baseUrl; ?>/manage-jobs.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                                     <i class="fas fa-tasks text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Manage Jobs</span>
                                 </a>
                                 <a href="<?php echo $baseUrl; ?>/candidates.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                                     <i class="fas fa-users text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Candidates</span>
                                 </a>
                                 <a href="<?php echo $baseUrl; ?>/company-profile.php"
-                                    class="px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                    class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                                     <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
                                     <span>Company</span>
                                 </a>
@@ -232,15 +248,14 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                             <!-- User dropdown -->
                             <div class="relative ml-2" id="userDropdown">
                                 <button
-                                    class="flex items-center space-x-3 px-4 py-2.5 rounded-lg hover:bg-primary-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50"
+                                    class="flex items-center space-x-3 px-4 py-2.5 hover:bg-primary-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50"
                                     id="dropdownButton">
                                     <div class="relative">
                                         <div
-                                            class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                                            class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-semibold shadow-md">
                                             <?php echo strtoupper($userInitial); ?>
                                         </div>
-                                        <div
-                                            class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white">
+                                        <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white">
                                         </div>
                                     </div>
                                     <div class="flex flex-col items-start">
@@ -252,13 +267,15 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                                         id="dropdownIcon"></i>
                                 </button>
 
-                                <div class="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-dropdown py-2 hidden animate-fadeIn z-50 border border-gray-100"
+                                <div class="absolute right-0 mt-2 w-56 bg-white shadow-dropdown py-2 hidden animate-fadeIn z-50 border border-gray-100"
                                     id="dropdownMenu">
                                     <div class="px-4 py-3 border-b border-gray-100">
                                         <p class="text-sm font-medium text-secondary-800">
-                                            <?php echo htmlspecialchars($userName); ?></p>
+                                            <?php echo htmlspecialchars($userName); ?>
+                                        </p>
                                         <p class="text-xs text-secondary-500 mt-1">
-                                            <?php echo $_SESSION['user_email'] ?? ''; ?></p>
+                                            <?php echo $_SESSION['user_email'] ?? ''; ?>
+                                        </p>
                                     </div>
 
                                     <a href="<?php echo $baseUrl; ?>/profile.php"
@@ -302,7 +319,7 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                         <!-- Mobile user icon for logged in -->
                         <div class="relative md:hidden">
                             <div
-                                class="w-9 h-9 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white font-semibold">
+                                class="w-9 h-9 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-semibold">
                                 <?php echo strtoupper($userInitial); ?>
                             </div>
                         </div>
@@ -322,31 +339,40 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                     <!-- Public Mobile Menu -->
                     <div class="space-y-1">
                         <a href="<?php echo $baseUrl; ?>/"
-                            class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                             <i
                                 class="fas fa-home text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Home</span>
                         </a>
                         <a href="<?php echo $baseUrl; ?>/browse-jobs.php"
-                            class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                             <i
                                 class="fas fa-briefcase text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Browse Jobs</span>
                         </a>
                         <a href="<?php echo $baseUrl; ?>/job-search.php"
-                            class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                             <i
                                 class="fas fa-search text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Search Jobs</span>
                         </a>
-                        <a href="#companies"
-                            class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                        <?php if (!$isLoggedIn): ?>
+                        <a href="<?php echo $baseUrl; ?>/companies.php"
+                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                             <i
                                 class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Companies</span>
                         </a>
-                        <a href="#about"
-                            class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                    <?php else: ?>
+                        <a href="<?php echo $baseUrl; ?>/company-profile.php"
+                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                            <i
+                                class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
+                            <span class="font-medium">Companies</span>
+                        </a>
+                    <?php endif; ?>
+                        <a href="<?php echo $baseUrl; ?>/about.php"
+                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                             <i
                                 class="fas fa-info-circle text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">About</span>
@@ -355,20 +381,20 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
 
                     <div class="mt-6 pt-6 border-t border-gray-200 space-y-3">
                         <a href="<?php echo $baseUrl; ?>/login.php"
-                            class="block px-4 py-3 rounded-lg text-primary-600 hover:text-primary-700 font-medium hover:bg-primary-50 border border-primary-100 transition-colors duration-200 text-center">
+                            class="block px-4 py-3 text-primary-600 hover:text-primary-700 font-medium hover:bg-primary-50 border border-primary-100 transition-colors duration-200 text-center">
                             Login
                         </a>
                         <a href="<?php echo $baseUrl; ?>/register.php?type=jobseeker"
-                            class="block px-4 py-3 rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md transition-all duration-300 text-center">
+                            class="block px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md transition-all duration-300 text-center">
                             Sign Up Free
                         </a>
                     </div>
                 <?php else: ?>
                     <!-- Authenticated User Mobile Menu -->
                     <div class="space-y-1">
-                        <div class="flex items-center space-x-3 px-4 py-3 bg-primary-50 rounded-lg mb-3">
+                        <div class="flex items-center space-x-3 px-4 py-3 bg-primary-50 mb-3">
                             <div
-                                class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white font-semibold text-lg">
+                                class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-semibold text-lg">
                                 <?php echo strtoupper($userInitial); ?>
                             </div>
                             <div class="flex-1">
@@ -379,58 +405,57 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
 
                         <?php if ($userRole == 'jobseeker'): ?>
                             <a href="<?php echo $baseUrl; ?>/dashboard.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-chart-line text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Dashboard</span>
                             </a>
                             <a href="<?php echo $baseUrl; ?>/job-search.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-search text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Find Jobs</span>
-                                <span
-                                    class="ml-auto bg-primary-500 text-white text-xs px-2 py-1 rounded-full animate-pulse-slow">New</span>
+                                <span class="ml-auto bg-primary-500 text-white text-xs px-2 py-1 animate-pulse-slow">New</span>
                             </a>
                             <a href="<?php echo $baseUrl; ?>/applications.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-file-alt text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Applications</span>
                             </a>
                             <a href="<?php echo $baseUrl; ?>/profile.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-user-circle text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Profile</span>
                             </a>
                         <?php else: ?>
                             <a href="<?php echo $baseUrl; ?>/dashboard.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-chart-line text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Dashboard</span>
                             </a>
                             <a href="<?php echo $baseUrl; ?>/post-job.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-plus-circle text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Post Job</span>
                             </a>
                             <a href="<?php echo $baseUrl; ?>/manage-jobs.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-tasks text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Manage Jobs</span>
                             </a>
                             <a href="<?php echo $baseUrl; ?>/candidates.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-users text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Candidates</span>
                             </a>
                             <a href="<?php echo $baseUrl; ?>/company-profile.php"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                                 <i
                                     class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Company</span>
@@ -438,7 +463,7 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                         <?php endif; ?>
 
                         <a href="<?php echo $baseUrl; ?>/settings.php"
-                            class="flex items-center space-x-3 px-4 py-3 rounded-lg text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                             <i class="fas fa-cog text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Settings</span>
                         </a>
@@ -446,7 +471,7 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                         <div class="border-t border-gray-200 my-2"></div>
 
                         <a href="<?php echo $baseUrl; ?>/logout.php"
-                            class="flex items-center space-x-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 transition-colors duration-200 group">
+                            class="flex items-center space-x-3 px-4 py-3 text-red-600 hover:bg-red-50 transition-colors duration-200 group">
                             <i class="fas fa-sign-out-alt text-lg w-6 text-center group-hover:text-red-700"></i>
                             <span class="font-medium">Logout</span>
                         </a>

@@ -25,7 +25,7 @@ require_once 'includes/header.php';
                     <p class="text-gray-600">View, edit, and manage all your job postings</p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <a href="post-job.php" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                    <a href="post-job.php" class="bg-blue-600 text-white px-6 py-3   font-semibold hover:bg-blue-700 transition duration-300">
                         <i class="fas fa-plus mr-2"></i>Post New Job
                     </a>
                 </div>
@@ -34,49 +34,49 @@ require_once 'includes/header.php';
 
         <!-- Stats -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Active Jobs</p>
                         <p class="text-2xl font-bold text-gray-800">12</p>
                     </div>
-                    <div class="bg-green-100 p-3 rounded-lg">
+                    <div class="bg-green-100 p-3  ">
                         <i class="fas fa-check-circle text-green-600 text-xl"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Draft Jobs</p>
                         <p class="text-2xl font-bold text-gray-800">3</p>
                     </div>
-                    <div class="bg-yellow-100 p-3 rounded-lg">
+                    <div class="bg-yellow-100 p-3  ">
                         <i class="fas fa-pencil-alt text-yellow-600 text-xl"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Total Applications</p>
                         <p class="text-2xl font-bold text-gray-800">245</p>
                     </div>
-                    <div class="bg-blue-100 p-3 rounded-lg">
+                    <div class="bg-blue-100 p-3  ">
                         <i class="fas fa-paper-plane text-blue-600 text-xl"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Closed Jobs</p>
                         <p class="text-2xl font-bold text-gray-800">8</p>
                     </div>
-                    <div class="bg-gray-100 p-3 rounded-lg">
+                    <div class="bg-gray-100 p-3  ">
                         <i class="fas fa-archive text-gray-600 text-xl"></i>
                     </div>
                 </div>
@@ -84,7 +84,7 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Search and Filter -->
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <div class="bg-white   shadow-lg p-6 mb-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="md:col-span-2">
                     <div class="relative">
@@ -92,12 +92,12 @@ require_once 'includes/header.php';
                         <input type="text" 
                                id="jobSearch"
                                placeholder="Search jobs by title, company, or ID..."
-                               class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                               class="w-full pl-10 pr-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                 </div>
                 
                 <div>
-                    <select id="statusFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select id="statusFilter" class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="all">All Status</option>
                         <option value="active">Active</option>
                         <option value="draft">Draft</option>
@@ -110,10 +110,10 @@ require_once 'includes/header.php';
             
             <!-- Filter Tags -->
             <div class="flex flex-wrap gap-2 mt-4">
-                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                <span class="bg-blue-100 text-blue-600 px-3 py-1   text-sm font-medium">
                     All Jobs <button class="ml-2 text-blue-800">×</button>
                 </span>
-                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">
+                <span class="bg-green-100 text-green-600 px-3 py-1   text-sm font-medium">
                     Active <button class="ml-2 text-green-800">×</button>
                 </span>
                 <button class="text-gray-600 text-sm hover:text-blue-600">
@@ -123,7 +123,7 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Jobs Table -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-white   shadow-lg overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="w-full">
                     <thead>
@@ -206,7 +206,7 @@ require_once 'includes/header.php';
                         <tr class="border-b hover:bg-gray-50 transition duration-200">
                             <td class="py-4 px-6">
                                 <div class="flex items-center">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <div class="w-10 h-10 bg-blue-100   flex items-center justify-center mr-4">
                                         <i class="fas fa-briefcase text-blue-600"></i>
                                     </div>
                                     <div>
@@ -217,7 +217,7 @@ require_once 'includes/header.php';
                                                 <i class="fas fa-eye mr-1"></i><?php echo $job['views']; ?> views
                                             </span>
                                             <?php if ($job['urgent']): ?>
-                                            <span class="ml-3 bg-red-100 text-red-600 text-xs px-2 py-1 rounded">URGENT</span>
+                                            <span class="ml-3 bg-red-100 text-red-600 text-xs px-2 py-1  ">URGENT</span>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -232,7 +232,7 @@ require_once 'includes/header.php';
                                 </div>
                             </td>
                             <td class="py-4 px-6">
-                                <span class="px-3 py-1 rounded-full text-sm font-medium <?php echo $job['status_color']; ?>">
+                                <span class="px-3 py-1   text-sm font-medium <?php echo $job['status_color']; ?>">
                                     <?php echo ucfirst($job['status']); ?>
                                 </span>
                             </td>
@@ -264,7 +264,7 @@ require_once 'includes/header.php';
                                         <button class="text-gray-600 hover:text-gray-800 p-2">
                                             <i class="fas fa-ellipsis-v"></i>
                                         </button>
-                                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10">
+                                        <div class="absolute right-0 mt-2 w-48 bg-white   shadow-lg py-2 hidden group-hover:block z-10">
                                             <a href="candidates.php?job=<?php echo $job['id']; ?>" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                                                 <i class="fas fa-users mr-2"></i>View Candidates
                                             </a>
@@ -297,13 +297,13 @@ require_once 'includes/header.php';
                         </p>
                     </div>
                     <div class="flex items-center space-x-2">
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg">1</button>
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">2</button>
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">3</button>
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                        <button class="px-4 py-2 bg-blue-600 text-white  ">1</button>
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">2</button>
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">3</button>
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
@@ -312,21 +312,21 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Bulk Actions -->
-        <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+        <div class="mt-8 bg-yellow-50 border border-yellow-200   p-6">
             <div class="flex flex-col md:flex-row md:items-center justify-between">
                 <div class="flex items-center mb-4 md:mb-0">
-                    <input type="checkbox" id="selectAll" class="h-4 w-4 text-blue-600 rounded mr-3">
+                    <input type="checkbox" id="selectAll" class="h-4 w-4 text-blue-600   mr-3">
                     <label for="selectAll" class="text-gray-700 font-medium">Select all jobs</label>
                 </div>
                 <div class="flex space-x-3">
-                    <select class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select class="border border-gray-300   px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="">Bulk Actions</option>
                         <option value="activate">Activate Selected</option>
                         <option value="deactivate">Deactivate Selected</option>
                         <option value="archive">Archive Selected</option>
                         <option value="delete">Delete Selected</option>
                     </select>
-                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium">
+                    <button class="bg-blue-600 text-white px-6 py-2   hover:bg-blue-700 font-medium">
                         Apply
                     </button>
                 </div>
@@ -335,7 +335,7 @@ require_once 'includes/header.php';
 
         <!-- Quick Stats -->
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="bg-white   shadow-lg p-6">
                 <h3 class="font-bold text-gray-800 mb-4">Job Performance</h3>
                 <div class="space-y-4">
                     <div>
@@ -343,8 +343,8 @@ require_once 'includes/header.php';
                             <span class="text-gray-600">Average applications per job</span>
                             <span class="font-medium">49</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
+                        <div class="w-full bg-gray-200   h-2">
+                            <div class="bg-blue-600 h-2  " style="width: 70%"></div>
                         </div>
                     </div>
                     <div>
@@ -352,14 +352,14 @@ require_once 'includes/header.php';
                             <span class="text-gray-600">Hiring success rate</span>
                             <span class="font-medium">15%</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-green-600 h-2 rounded-full" style="width: 15%"></div>
+                        <div class="w-full bg-gray-200   h-2">
+                            <div class="bg-green-600 h-2  " style="width: 15%"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="bg-white   shadow-lg p-6">
                 <h3 class="font-bold text-gray-800 mb-4">Top Performing Jobs</h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center">
@@ -377,18 +377,18 @@ require_once 'includes/header.php';
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="bg-white   shadow-lg p-6">
                 <h3 class="font-bold text-gray-800 mb-4">Quick Actions</h3>
                 <div class="space-y-3">
-                    <a href="post-job.php" class="flex items-center p-3 rounded-lg hover:bg-blue-50 text-blue-600">
+                    <a href="post-job.php" class="flex items-center p-3   hover:bg-blue-50 text-blue-600">
                         <i class="fas fa-plus mr-3"></i>
                         <span>Create New Job Template</span>
                     </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 text-blue-600">
+                    <a href="#" class="flex items-center p-3   hover:bg-blue-50 text-blue-600">
                         <i class="fas fa-download mr-3"></i>
                         <span>Export Job Data</span>
                     </a>
-                    <a href="#" class="flex items-center p-3 rounded-lg hover:bg-blue-50 text-blue-600">
+                    <a href="#" class="flex items-center p-3   hover:bg-blue-50 text-blue-600">
                         <i class="fas fa-chart-bar mr-3"></i>
                         <span>View Analytics Report</span>
                     </a>

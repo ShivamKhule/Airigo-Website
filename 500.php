@@ -15,10 +15,10 @@ require_once 'includes/header.php';
         </div>
         
         <div class="space-y-4">
-            <a href="/" class="block bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition duration-300">
+            <a href="/" class="block bg-blue-600 text-white px-8 py-4   font-bold text-lg hover:bg-blue-700 transition duration-300">
                 <i class="fas fa-home mr-2"></i>Go to Homepage
             </a>
-            <a href="javascript:location.reload()" class="block border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition duration-300">
+            <a href="javascript:location.reload()" class="block border-2 border-blue-600 text-blue-600 px-8 py-4   font-bold text-lg hover:bg-blue-50 transition duration-300">
                 <i class="fas fa-redo mr-2"></i>Refresh Page
             </a>
         </div>

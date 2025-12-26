@@ -25,7 +25,7 @@ function sendWelcomeEmailJobSeeker($userEmail, $userName) {
                 <h1>Welcome to Airigojobs, {$userName}!</h1>
             </div>
             <div class='content'>
-                <p>Thank you for joining Airigojobs, the premier job portal for aviation and hospitality professionals.</p>
+                <p>Thank you for joining Airigojobs, the premier job portal for airline and hospitality professionals.</p>
                 
                 <div class='steps'>
                     <h3>Get Started in 3 Easy Steps:</h3>

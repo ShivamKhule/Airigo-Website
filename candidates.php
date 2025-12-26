@@ -24,7 +24,7 @@ require_once 'includes/header.php';
                     <p class="text-gray-600">Review and manage all job applications</p>
                 </div>
                 <div class="mt-4 md:mt-0">
-                    <a href="manage-jobs.php" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                    <a href="manage-jobs.php" class="bg-blue-600 text-white px-6 py-3   font-semibold hover:bg-blue-700 transition duration-300">
                         <i class="fas fa-briefcase mr-2"></i>View Jobs
                     </a>
                 </div>
@@ -33,61 +33,61 @@ require_once 'includes/header.php';
 
         <!-- Stats -->
         <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Total Candidates</p>
                         <p class="text-2xl font-bold text-gray-800">245</p>
                     </div>
-                    <div class="bg-blue-100 p-3 rounded-lg">
+                    <div class="bg-blue-100 p-3  ">
                         <i class="fas fa-users text-blue-600 text-xl"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">New Applications</p>
                         <p class="text-2xl font-bold text-gray-800">42</p>
                     </div>
-                    <div class="bg-green-100 p-3 rounded-lg">
+                    <div class="bg-green-100 p-3  ">
                         <i class="fas fa-plus-circle text-green-600 text-xl"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Shortlisted</p>
                         <p class="text-2xl font-bold text-gray-800">24</p>
                     </div>
-                    <div class="bg-purple-100 p-3 rounded-lg">
+                    <div class="bg-purple-100 p-3  ">
                         <i class="fas fa-star text-purple-600 text-xl"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Interview</p>
                         <p class="text-2xl font-bold text-gray-800">8</p>
                     </div>
-                    <div class="bg-yellow-100 p-3 rounded-lg">
+                    <div class="bg-yellow-100 p-3  ">
                         <i class="fas fa-calendar-alt text-yellow-600 text-xl"></i>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl p-6 shadow-lg">
+            <div class="bg-white   p-6 shadow-lg">
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="text-gray-600 text-sm">Hired</p>
                         <p class="text-2xl font-bold text-gray-800">5</p>
                     </div>
-                    <div class="bg-green-100 p-3 rounded-lg">
+                    <div class="bg-green-100 p-3  ">
                         <i class="fas fa-check-circle text-green-600 text-xl"></i>
                     </div>
                 </div>
@@ -95,19 +95,19 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Filters and Search -->
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <div class="bg-white   shadow-lg p-6 mb-8">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
                 <div class="lg:col-span-2">
                     <div class="relative">
                         <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                         <input type="text" 
                                placeholder="Search candidates by name, email, or skills..."
-                               class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                               class="w-full pl-10 pr-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                 </div>
                 
                 <div>
-                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="">All Jobs</option>
                         <option value="1">Senior Pilot</option>
                         <option value="2">Flight Attendant</option>
@@ -116,7 +116,7 @@ require_once 'includes/header.php';
                 </div>
                 
                 <div>
-                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="all">All Status</option>
                         <option value="new">New</option>
                         <option value="reviewed">Reviewed</option>
@@ -137,7 +137,7 @@ require_once 'includes/header.php';
                 <div id="advancedFilters" class="hidden mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Experience Level</label>
-                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <select class="w-full px-4 py-2 border border-gray-300  ">
                             <option value="">Any Experience</option>
                             <option value="entry">Entry Level</option>
                             <option value="mid">Mid Level</option>
@@ -148,13 +148,13 @@ require_once 'includes/header.php';
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
                         <input type="text" 
-                               class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                               class="w-full px-4 py-2 border border-gray-300  "
                                placeholder="City, Country">
                     </div>
                     
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Date Applied</label>
-                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <select class="w-full px-4 py-2 border border-gray-300  ">
                             <option value="">Any Date</option>
                             <option value="today">Today</option>
                             <option value="week">This Week</option>
@@ -166,13 +166,13 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Candidates Table -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-white   shadow-lg overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="w-full">
                     <thead>
                         <tr class="bg-gray-50 border-b">
                             <th class="text-left py-4 px-6 text-gray-600 font-medium">
-                                <input type="checkbox" class="h-4 w-4 text-blue-600 rounded">
+                                <input type="checkbox" class="h-4 w-4 text-blue-600  ">
                             </th>
                             <th class="text-left py-4 px-6 text-gray-600 font-medium">Candidate</th>
                             <th class="text-left py-4 px-6 text-gray-600 font-medium">Job Applied</th>
@@ -260,11 +260,11 @@ require_once 'includes/header.php';
                         ?>
                         <tr class="border-b hover:bg-gray-50 transition duration-200">
                             <td class="py-4 px-6">
-                                <input type="checkbox" class="h-4 w-4 text-blue-600 rounded candidate-checkbox">
+                                <input type="checkbox" class="h-4 w-4 text-blue-600   candidate-checkbox">
                             </td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <div class="w-10 h-10 bg-blue-100   flex items-center justify-center mr-4">
                                         <span class="font-bold text-blue-600"><?php echo substr($candidate['name'], 0, 1); ?></span>
                                     </div>
                                     <div>
@@ -292,7 +292,7 @@ require_once 'includes/header.php';
                                 <?php echo date('M d, Y', strtotime($candidate['applied_date'])); ?>
                             </td>
                             <td class="py-4 px-6">
-                                <span class="px-3 py-1 rounded-full text-sm font-medium <?php echo $candidate['status_color']; ?>">
+                                <span class="px-3 py-1   text-sm font-medium <?php echo $candidate['status_color']; ?>">
                                     <?php echo ucfirst($candidate['status']); ?>
                                 </span>
                                 <p class="text-gray-500 text-xs mt-1">
@@ -315,7 +315,7 @@ require_once 'includes/header.php';
                                         <button class="text-gray-600 hover:text-gray-800 p-2">
                                             <i class="fas fa-ellipsis-v"></i>
                                         </button>
-                                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10">
+                                        <div class="absolute right-0 mt-2 w-48 bg-white   shadow-lg py-2 hidden group-hover:block z-10">
                                             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                                                 <i class="fas fa-envelope mr-2"></i>Send Email
                                             </a>
@@ -348,13 +348,13 @@ require_once 'includes/header.php';
                         </p>
                     </div>
                     <div class="flex items-center space-x-2">
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg">1</button>
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">2</button>
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">3</button>
-                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                        <button class="px-4 py-2 bg-blue-600 text-white  ">1</button>
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">2</button>
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">3</button>
+                        <button class="px-4 py-2 border border-gray-300   text-gray-700 hover:bg-gray-50">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
@@ -366,11 +366,11 @@ require_once 'includes/header.php';
         <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Bulk Actions -->
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="bg-white   shadow-lg p-6">
                     <h3 class="font-bold text-gray-800 mb-4">Bulk Actions</h3>
                     <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
                         <div class="flex-1">
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <select class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 <option value="">Select Action</option>
                                 <option value="shortlist">Shortlist Selected</option>
                                 <option value="reject">Reject Selected</option>
@@ -379,10 +379,10 @@ require_once 'includes/header.php';
                                 <option value="download">Download Resumes</option>
                             </select>
                         </div>
-                        <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 font-medium">
+                        <button class="bg-blue-600 text-white px-8 py-3   hover:bg-blue-700 font-medium">
                             Apply to Selected
                         </button>
-                        <button class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 font-medium">
+                        <button class="border border-gray-300 text-gray-700 px-6 py-3   hover:bg-gray-50 font-medium">
                             Clear Selection
                         </button>
                     </div>
@@ -391,16 +391,16 @@ require_once 'includes/header.php';
                     <div class="mt-6 pt-6 border-t">
                         <h4 class="font-medium text-gray-700 mb-3">Quick Status Update</h4>
                         <div class="flex flex-wrap gap-2">
-                            <button class="bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200">
+                            <button class="bg-green-100 text-green-800 px-4 py-2   hover:bg-green-200">
                                 Mark as Shortlisted
                             </button>
-                            <button class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg hover:bg-yellow-200">
+                            <button class="bg-yellow-100 text-yellow-800 px-4 py-2   hover:bg-yellow-200">
                                 Schedule Interview
                             </button>
-                            <button class="bg-red-100 text-red-800 px-4 py-2 rounded-lg hover:bg-red-200">
+                            <button class="bg-red-100 text-red-800 px-4 py-2   hover:bg-red-200">
                                 Reject Application
                             </button>
-                            <button class="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200">
+                            <button class="bg-blue-100 text-blue-800 px-4 py-2   hover:bg-blue-200">
                                 Send Follow-up
                             </button>
                         </div>
@@ -410,24 +410,24 @@ require_once 'includes/header.php';
 
             <!-- Export Options -->
             <div>
-                <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="bg-white   shadow-lg p-6">
                     <h3 class="font-bold text-gray-800 mb-4">Export Data</h3>
                     <div class="space-y-3">
-                        <button class="w-full flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <button class="w-full flex items-center justify-between p-3 border border-gray-200   hover:bg-gray-50">
                             <span class="text-gray-700">
                                 <i class="fas fa-file-excel text-green-600 mr-2"></i>
                                 Export to Excel
                             </span>
                             <i class="fas fa-download text-gray-400"></i>
                         </button>
-                        <button class="w-full flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <button class="w-full flex items-center justify-between p-3 border border-gray-200   hover:bg-gray-50">
                             <span class="text-gray-700">
                                 <i class="fas fa-file-pdf text-red-600 mr-2"></i>
                                 Export to PDF
                             </span>
                             <i class="fas fa-download text-gray-400"></i>
                         </button>
-                        <button class="w-full flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <button class="w-full flex items-center justify-between p-3 border border-gray-200   hover:bg-gray-50">
                             <span class="text-gray-700">
                                 <i class="fas fa-file-csv text-blue-600 mr-2"></i>
                                 Export to CSV
@@ -491,7 +491,7 @@ headerCheckbox.addEventListener('change', function() {
 document.querySelectorAll('[title]').forEach(element => {
     element.addEventListener('mouseenter', function() {
         const tooltip = document.createElement('div');
-        tooltip.className = 'fixed bg-gray-900 text-white px-2 py-1 rounded text-sm z-50';
+        tooltip.className = 'fixed bg-gray-900 text-white px-2 py-1   text-sm z-50';
         tooltip.textContent = this.getAttribute('title');
         document.body.appendChild(tooltip);
         

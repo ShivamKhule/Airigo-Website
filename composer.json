@@ -1,6 +1,6 @@
 {
     "name": "airigojobs/website",
-    "description": "Aviation & Hospitality Job Portal",
+    "description": "Airline & Hospitality Job Portal",
     "type": "project",
     "require": {
         "php": ">=7.4",

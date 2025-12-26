@@ -15,7 +15,7 @@ class FirestoreDB
                     'companyName' => 'Emirates Airlines',
                     'location' => 'Dubai, UAE',
                     'jobType' => 'Full-time',
-                    'category' => 'Aviation',
+                    'category' => 'Airline',
                     'ctc' => '50000-80000',
                     'skills' => 'Customer Service, Safety Protocols, Languages',
                     'description' => 'Join our world-class cabin crew team and provide exceptional service to passengers on international flights. We are looking for enthusiastic individuals who are passionate about delivering outstanding customer service.',
@@ -29,7 +29,7 @@ class FirestoreDB
                     'companyName' => 'Qatar Airways',
                     'location' => 'Doha, Qatar',
                     'jobType' => 'Full-time',
-                    'category' => 'Aviation',
+                    'category' => 'Airline',
                     'ctc' => '120000-200000',
                     'skills' => 'ATPL License, Boeing 777 Type Rating, 5000+ Flight Hours',
                     'description' => 'Experienced commercial pilot needed for long-haul international flights. Join one of the world\'s leading airlines.',
@@ -57,7 +57,7 @@ class FirestoreDB
                     'companyName' => 'IndiGo Airlines',
                     'location' => 'Delhi, India',
                     'jobType' => 'Full-time',
-                    'category' => 'Aviation',
+                    'category' => 'Airline',
                     'ctc' => '25000-35000',
                     'skills' => 'Customer Service, Airport Operations, Communication',
                     'description' => 'Handle passenger check-in, baggage handling, and ground operations at Delhi airport.',
@@ -85,11 +85,11 @@ class FirestoreDB
                     'companyName' => 'Air India',
                     'location' => 'Bangalore, India',
                     'jobType' => 'Full-time',
-                    'category' => 'Aviation',
+                    'category' => 'Airline',
                     'ctc' => '70000-100000',
                     'skills' => 'Aircraft Maintenance, AME License, Technical Skills',
                     'description' => 'Maintain and repair aircraft to ensure safety and airworthiness standards.',
-                    'requirements' => 'AME License, Aeronautical Engineering degree, 3+ years experience, Knowledge of aviation regulations',
+                    'requirements' => 'AME License, Aeronautical Engineering degree, 3+ years experience, Knowledge of airline regulations',
                     'isUrgentHiring' => true,
                     'createdAt' => '2024-01-10 08:00:00',
                     'postedBy' => 'careers@airindia.in'
@@ -237,6 +237,18 @@ class FirestoreDB
         if (!empty($filters['category'])) {
             $jobs = array_filter($jobs, function ($job) use ($filters) {
                 return isset($job['category']) && $job['category'] === $filters['category'];
+            });
+        }
+        
+        if (!empty($filters['jobType'])) {
+            $jobs = array_filter($jobs, function ($job) use ($filters) {
+                return isset($job['jobType']) && $job['jobType'] === $filters['jobType'];
+            });
+        }
+        
+        if (!empty($filters['companyName'])) {
+            $jobs = array_filter($jobs, function ($job) use ($filters) {
+                return isset($job['companyName']) && $job['companyName'] === $filters['companyName'];
             });
         }
 

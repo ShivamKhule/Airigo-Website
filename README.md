@@ -1,6 +1,6 @@
-# Airigojobs - Aviation & Hospitality Job Portal
+# Airigojobs - Airline & Hospitality Job Portal
 
-A modern, production-ready job portal built with PHP, Firebase, and Tailwind CSS, specifically designed for the aviation and hospitality industry.
+A modern, production-ready job portal built with PHP, Firebase, and Tailwind CSS, specifically designed for the airline and hospitality industry.
 
 ## 🚀 Features
 

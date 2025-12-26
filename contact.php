@@ -4,23 +4,21 @@ require_once 'includes/header.php';
 ?>
 
 <div class="min-h-screen bg-gray-50">
-    <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-                <p class="text-xl opacity-90 max-w-2xl mx-auto">
-                    Get in touch with our team. We're here to help you with any questions about Airigojobs.
-                </p>
-            </div>
-        </div>
-    </div>
 
-    <div class="container mx-auto px-4 py-12">
+    <section class="container mx-auto px-4">
+        <div class="bg-white shadow-md p-6 my-8 justify-start items-start">
+            <h1 class="text-2xl md:text-3xl font-bold mb-4">Contact Us</h1>
+            <h2 class="text-lg md:text-xl opacity-90">
+                Get in touch with our team. We're here to help you with any questions about Airigojobs.
+            </h2>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-4 pb-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <!-- Contact Information -->
             <div class="lg:col-span-1">
-                <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="bg-white   shadow-lg p-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-8">Get in Touch</h2>
                     
                     <div class="space-y-8">
@@ -29,17 +27,17 @@ require_once 'includes/header.php';
                             <h3 class="text-lg font-bold text-gray-800 mb-4">Contact Information</h3>
                             <div class="space-y-4">
                                 <div class="flex items-start">
-                                    <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                    <div class="bg-blue-100 p-3   mr-4">
                                         <i class="fas fa-map-marker-alt text-blue-600"></i>
                                     </div>
                                     <div>
                                         <p class="font-medium text-gray-800">Headquarters</p>
-                                        <p class="text-gray-600">123 Aviation Avenue<br>Suite 500<br>New York, NY 10001</p>
+                                        <p class="text-gray-600">123 Airline Avenue<br>Suite 500<br>New York, NY 10001</p>
                                     </div>
                                 </div>
                                 
                                 <div class="flex items-start">
-                                    <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                    <div class="bg-blue-100 p-3   mr-4">
                                         <i class="fas fa-phone text-blue-600"></i>
                                     </div>
                                     <div>
@@ -49,7 +47,7 @@ require_once 'includes/header.php';
                                 </div>
                                 
                                 <div class="flex items-start">
-                                    <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                    <div class="bg-blue-100 p-3   mr-4">
                                         <i class="fas fa-envelope text-blue-600"></i>
                                     </div>
                                     <div>
@@ -80,9 +78,9 @@ require_once 'includes/header.php';
                         </div>
 
                         <!-- Emergency Support -->
-                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                        <div class="bg-blue-50 border border-blue-200   p-6">
                             <div class="flex items-start">
-                                <div class="bg-blue-600 p-2 rounded-lg mr-3">
+                                <div class="bg-blue-600 p-2   mr-3">
                                     <i class="fas fa-headset text-white"></i>
                                 </div>
                                 <div>
@@ -96,7 +94,7 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- Quick Links -->
-                <div class="mt-8 bg-white rounded-2xl shadow-lg p-8">
+                <div class="mt-8 bg-white   shadow-lg p-8">
                     <h3 class="text-lg font-bold text-gray-800 mb-6">Quick Links</h3>
                     <div class="space-y-3">
                         <a href="faq.php" class="flex items-center text-gray-700 hover:text-blue-600">
@@ -121,7 +119,7 @@ require_once 'includes/header.php';
 
             <!-- Contact Form -->
             <div class="lg:col-span-2">
-                <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="bg-white   shadow-lg p-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h2>
                     <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you as soon as possible.</p>
                     
@@ -133,7 +131,7 @@ require_once 'includes/header.php';
                                 </label>
                                 <input type="text" 
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div>
@@ -142,7 +140,7 @@ require_once 'includes/header.php';
                                 </label>
                                 <input type="text" 
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                         </div>
                         
@@ -153,7 +151,7 @@ require_once 'includes/header.php';
                                 </label>
                                 <input type="email" 
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div>
@@ -161,7 +159,7 @@ require_once 'includes/header.php';
                                     Phone Number
                                 </label>
                                 <input type="tel" 
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                         </div>
                         
@@ -169,7 +167,7 @@ require_once 'includes/header.php';
                             <label class="block text-sm font-medium text-gray-700 mb-2">
                                 Subject *
                             </label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <select class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 <option value="">Select a subject</option>
                                 <option value="general">General Inquiry</option>
                                 <option value="technical">Technical Support</option>
@@ -187,7 +185,7 @@ require_once 'includes/header.php';
                             </label>
                             <textarea rows="6" 
                                       required
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                      class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500"
                                       placeholder="Please describe your inquiry in detail..."></textarea>
                         </div>
                         
@@ -195,7 +193,7 @@ require_once 'includes/header.php';
                             <label class="flex items-start">
                                 <input type="checkbox" 
                                        required
-                                       class="mt-1 mr-3 h-4 w-4 text-blue-600 rounded">
+                                       class="mt-1 mr-3 h-4 w-4 text-blue-600  ">
                                 <span class="text-gray-700">
                                     I agree to the <a href="privacy.php" class="text-blue-600 hover:text-blue-800">Privacy Policy</a> and consent to Airigojobs contacting me regarding my inquiry.
                                 </span>
@@ -204,7 +202,7 @@ require_once 'includes/header.php';
                         
                         <div class="flex justify-end">
                             <button type="submit" 
-                                    class="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition duration-300">
+                                    class="bg-blue-600 text-white px-8 py-4   font-bold hover:bg-blue-700 transition duration-300">
                                 <i class="fas fa-paper-plane mr-2"></i>Send Message
                             </button>
                         </div>
@@ -212,7 +210,7 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- FAQ Section -->
-                <div class="mt-8 bg-white rounded-2xl shadow-lg p-8">
+                <div class="mt-8 bg-white   shadow-lg p-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
                     
                     <div class="space-y-4">
@@ -242,7 +240,7 @@ require_once 'includes/header.php';
                                 <i class="fas fa-chevron-down text-gray-400"></i>
                             </button>
                             <div class="mt-2 text-gray-600 hidden">
-                                While our headquarters are in New York, we have regional representatives across major aviation hubs worldwide. Contact us to connect with your local representative.
+                                While our headquarters are in New York, we have regional representatives across major airline hubs worldwide. Contact us to connect with your local representative.
                             </div>
                         </div>
                     </div>
@@ -255,11 +253,11 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- Map -->
-                <div class="mt-8 bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="mt-8 bg-white   shadow-lg overflow-hidden">
                     <div class="h-64 bg-blue-100 flex items-center justify-center">
                         <div class="text-center">
                             <i class="fas fa-map-marker-alt text-blue-600 text-4xl mb-4"></i>
-                            <p class="text-gray-700 font-medium">123 Aviation Avenue, New York, NY 10001</p>
+                            <p class="text-gray-700 font-medium">123 Airline Avenue, New York, NY 10001</p>
                         </div>
                     </div>
                 </div>

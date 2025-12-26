@@ -342,7 +342,7 @@ function generatePagination($totalItems, $currentPage, $itemsPerPage, $urlPatter
     // Previous button
     if ($currentPage > 1) {
         $html .= '<li>';
-        $html .= '<a href="' . str_replace('{page}', $currentPage - 1, $urlPattern) . '" class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700">';
+        $html .= '<a href="' . str_replace('{page}', $currentPage - 1, $urlPattern) . '" class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300   hover:bg-gray-100 hover:text-gray-700">';
         $html .= '<span class="sr-only">Previous</span>';
         $html .= '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>';
         $html .= '</a>';
@@ -368,7 +368,7 @@ function generatePagination($totalItems, $currentPage, $itemsPerPage, $urlPatter
     // Next button
     if ($currentPage < $totalPages) {
         $html .= '<li>';
-        $html .= '<a href="' . str_replace('{page}', $currentPage + 1, $urlPattern) . '" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700">';
+        $html .= '<a href="' . str_replace('{page}', $currentPage + 1, $urlPattern) . '" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300   hover:bg-gray-100 hover:text-gray-700">';
         $html .= '<span class="sr-only">Next</span>';
         $html .= '<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>';
         $html .= '</a>';
@@ -463,7 +463,7 @@ function generateStatusBadge($status)
 
     $colorClass = $colorClasses[$config['color']] ?? 'bg-gray-100 text-gray-800';
 
-    return '<span class="px-3 py-1 rounded-full text-sm font-medium ' . $colorClass . '">' . $config['text'] . '</span>';
+    return '<span class="px-3 py-1   text-sm font-medium ' . $colorClass . '">' . $config['text'] . '</span>';
 }
 
 /**
@@ -835,7 +835,7 @@ function displayFlashMessages()
 
         $class = $alertClasses[$message['type']] ?? $alertClasses['info'];
 
-        $html .= '<div class="mb-4 px-4 py-3 rounded relative ' . $class . '" role="alert">';
+        $html .= '<div class="mb-4 px-4 py-3   relative ' . $class . '" role="alert">';
         $html .= '<span class="block sm:inline">' . htmlspecialchars($message['message']) . '</span>';
         $html .= '<button class="absolute top-0 bottom-0 right-0 px-4 py-3" onclick="this.parentElement.remove()">';
         $html .= '<i class="fas fa-times"></i>';

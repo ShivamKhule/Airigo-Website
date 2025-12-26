@@ -74,7 +74,7 @@ require_once 'includes/header.php';
         </div>
 
         <?php if (isset($message)): ?>
-        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3   relative" role="alert">
             <span class="block sm:inline"><?php echo $message; ?></span>
         </div>
         <?php endif; ?>
@@ -82,32 +82,32 @@ require_once 'includes/header.php';
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             <!-- Settings Sidebar -->
             <div class="lg:col-span-1">
-                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-8">
+                <div class="bg-white   shadow-lg p-6 sticky top-8">
                     <nav class="space-y-2">
                         <a href="#notifications" 
-                           class="block px-4 py-3 rounded-lg bg-blue-50 text-blue-600 font-medium">
+                           class="block px-4 py-3   bg-blue-50 text-blue-600 font-medium">
                             <i class="fas fa-bell mr-2"></i>Notifications
                         </a>
                         <a href="#privacy" 
-                           class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+                           class="block px-4 py-3   text-gray-700 hover:bg-gray-100 font-medium">
                             <i class="fas fa-shield-alt mr-2"></i>Privacy
                         </a>
                         <a href="#account" 
-                           class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+                           class="block px-4 py-3   text-gray-700 hover:bg-gray-100 font-medium">
                             <i class="fas fa-user-cog mr-2"></i>Account
                         </a>
                         <a href="#security" 
-                           class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+                           class="block px-4 py-3   text-gray-700 hover:bg-gray-100 font-medium">
                             <i class="fas fa-lock mr-2"></i>Security
                         </a>
                         <?php if ($userRole === 'recruiter'): ?>
                         <a href="#billing" 
-                           class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+                           class="block px-4 py-3   text-gray-700 hover:bg-gray-100 font-medium">
                             <i class="fas fa-credit-card mr-2"></i>Billing
                         </a>
                         <?php endif; ?>
                         <a href="#integrations" 
-                           class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 font-medium">
+                           class="block px-4 py-3   text-gray-700 hover:bg-gray-100 font-medium">
                             <i class="fas fa-plug mr-2"></i>Integrations
                         </a>
                     </nav>
@@ -117,15 +117,15 @@ require_once 'includes/header.php';
                         <h3 class="font-bold text-gray-800 mb-4">Account Status</h3>
                         <div class="space-y-3">
                             <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <div class="w-2 h-2 bg-green-500   mr-3"></div>
                                 <span class="text-gray-700">Active</span>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <div class="w-2 h-2 bg-blue-500   mr-3"></div>
                                 <span class="text-gray-700">Email Verified</span>
                             </div>
                             <div class="flex items-center">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <div class="w-2 h-2 bg-blue-500   mr-3"></div>
                                 <span class="text-gray-700">Phone Verified</span>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ require_once 'includes/header.php';
             <!-- Settings Content -->
             <div class="lg:col-span-3">
                 <!-- Notifications Settings -->
-                <div id="notifications" class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <div id="notifications" class="bg-white   shadow-lg p-8 mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Notification Settings</h2>
                     
                     <form method="POST" action="" class="space-y-6">
@@ -153,7 +153,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="email_job_alerts"
                                            <?php echo ($userData['email_job_alerts'] ?? true) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                                 
                                 <label class="flex items-center justify-between">
@@ -164,7 +164,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="email_application_updates"
                                            <?php echo ($userData['email_application_updates'] ?? true) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                                 
                                 <label class="flex items-center justify-between">
@@ -175,7 +175,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="email_marketing"
                                            <?php echo ($userData['email_marketing'] ?? false) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                             </div>
                         </div>
@@ -191,7 +191,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="sms_notifications"
                                            <?php echo ($userData['sms_notifications'] ?? false) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                                 
                                 <label class="flex items-center justify-between">
@@ -202,7 +202,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="push_notifications"
                                            <?php echo ($userData['push_notifications'] ?? true) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                             </div>
                         </div>
@@ -213,7 +213,7 @@ require_once 'includes/header.php';
                                 <label class="block text-sm font-medium text-gray-700 mb-2">
                                     Job Alert Frequency
                                 </label>
-                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <select class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option>Daily Digest</option>
                                     <option>Immediate</option>
                                     <option>Weekly Summary</option>
@@ -223,7 +223,7 @@ require_once 'includes/header.php';
                         
                         <div class="pt-6 border-t">
                             <button type="submit" 
-                                    class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700">
+                                    class="bg-blue-600 text-white px-6 py-3   font-medium hover:bg-blue-700">
                                 Save Notification Settings
                             </button>
                         </div>
@@ -231,7 +231,7 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- Privacy Settings -->
-                <div id="privacy" class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <div id="privacy" class="bg-white   shadow-lg p-8 mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Privacy Settings</h2>
                     
                     <form method="POST" action="" class="space-y-6">
@@ -280,7 +280,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="show_email"
                                            <?php echo ($userData['show_email'] ?? false) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                                 
                                 <label class="flex items-center justify-between">
@@ -291,7 +291,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="show_phone"
                                            <?php echo ($userData['show_phone'] ?? false) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                                 
                                 <label class="flex items-center justify-between">
@@ -302,7 +302,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="show_location"
                                            <?php echo ($userData['show_location'] ?? true) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                             </div>
                         </div>
@@ -318,7 +318,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="data_sharing"
                                            <?php echo ($userData['data_sharing'] ?? true) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                                 
                                 <label class="flex items-center justify-between">
@@ -329,7 +329,7 @@ require_once 'includes/header.php';
                                     <input type="checkbox" 
                                            name="search_engine_indexing"
                                            <?php echo ($userData['search_engine_indexing'] ?? false) ? 'checked' : ''; ?>
-                                           class="relative h-6 w-11 rounded-full bg-gray-200 checked:bg-blue-600">
+                                           class="relative h-6 w-11   bg-gray-200 checked:bg-blue-600">
                                 </label>
                             </div>
                         </div>
@@ -339,7 +339,7 @@ require_once 'includes/header.php';
                             <h3 class="text-lg font-bold text-gray-800 mb-4">Data Management</h3>
                             <div class="space-y-3">
                                 <button type="button" 
-                                        class="w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                        class="w-full text-left p-4 border border-gray-300   hover:bg-gray-50">
                                     <div class="flex items-center justify-between">
                                         <div>
                                             <p class="font-medium text-gray-800">Download Your Data</p>
@@ -350,7 +350,7 @@ require_once 'includes/header.php';
                                 </button>
                                 
                                 <button type="button" 
-                                        class="w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-gray-50">
+                                        class="w-full text-left p-4 border border-gray-300   hover:bg-gray-50">
                                     <div class="flex items-center justify-between">
                                         <div>
                                             <p class="font-medium text-gray-800">Request Data Deletion</p>
@@ -364,7 +364,7 @@ require_once 'includes/header.php';
                         
                         <div class="pt-6 border-t">
                             <button type="submit" 
-                                    class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700">
+                                    class="bg-blue-600 text-white px-6 py-3   font-medium hover:bg-blue-700">
                                 Save Privacy Settings
                             </button>
                         </div>
@@ -372,7 +372,7 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- Account Settings -->
-                <div id="account" class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <div id="account" class="bg-white   shadow-lg p-8 mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Account Settings</h2>
                     
                     <form method="POST" action="" class="space-y-6">
@@ -387,7 +387,7 @@ require_once 'includes/header.php';
                                        name="email"
                                        value="<?php echo htmlspecialchars($userData['email'] ?? ''); ?>"
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div>
@@ -398,7 +398,7 @@ require_once 'includes/header.php';
                                        name="phone"
                                        value="<?php echo htmlspecialchars($userData['phone'] ?? ''); ?>"
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                       class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                             </div>
                             
                             <div>
@@ -406,7 +406,7 @@ require_once 'includes/header.php';
                                     Language
                                 </label>
                                 <select name="language" 
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="en" <?php echo ($userData['language'] ?? 'en') === 'en' ? 'selected' : ''; ?>>English</option>
                                     <option value="es" <?php echo ($userData['language'] ?? 'en') === 'es' ? 'selected' : ''; ?>>Spanish</option>
                                     <option value="fr" <?php echo ($userData['language'] ?? 'en') === 'fr' ? 'selected' : ''; ?>>French</option>
@@ -420,7 +420,7 @@ require_once 'includes/header.php';
                                     Timezone
                                 </label>
                                 <select name="timezone" 
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     <option value="UTC" <?php echo ($userData['timezone'] ?? 'UTC') === 'UTC' ? 'selected' : ''; ?>>UTC</option>
                                     <option value="EST" <?php echo ($userData['timezone'] ?? 'UTC') === 'EST' ? 'selected' : ''; ?>>Eastern Time (EST)</option>
                                     <option value="PST" <?php echo ($userData['timezone'] ?? 'UTC') === 'PST' ? 'selected' : ''; ?>>Pacific Time (PST)</option>
@@ -432,7 +432,7 @@ require_once 'includes/header.php';
                         
                         <div class="pt-6 border-t">
                             <button type="submit" 
-                                    class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700">
+                                    class="bg-blue-600 text-white px-6 py-3   font-medium hover:bg-blue-700">
                                 Save Account Settings
                             </button>
                         </div>
@@ -440,7 +440,7 @@ require_once 'includes/header.php';
                 </div>
 
                 <!-- Security Settings -->
-                <div id="security" class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <div id="security" class="bg-white   shadow-lg p-8 mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Security Settings</h2>
                     
                     <div class="space-y-8">
@@ -453,7 +453,7 @@ require_once 'includes/header.php';
                                         Current Password
                                     </label>
                                     <input type="password" 
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                           class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 </div>
                                 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -462,7 +462,7 @@ require_once 'includes/header.php';
                                             New Password
                                         </label>
                                         <input type="password" 
-                                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     </div>
                                     
                                     <div>
@@ -470,13 +470,13 @@ require_once 'includes/header.php';
                                             Confirm New Password
                                         </label>
                                         <input type="password" 
-                                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                               class="w-full px-4 py-3 border border-gray-300   focus:outline-none focus:ring-2 focus:ring-blue-500">
                                     </div>
                                 </div>
                                 
                                 <div>
                                     <button type="submit" 
-                                            class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700">
+                                            class="bg-blue-600 text-white px-6 py-3   font-medium hover:bg-blue-700">
                                         Update Password
                                     </button>
                                 </div>
@@ -486,12 +486,12 @@ require_once 'includes/header.php';
                         <!-- Two-Factor Authentication -->
                         <div class="pt-6 border-t">
                             <h3 class="text-lg font-bold text-gray-800 mb-4">Two-Factor Authentication</h3>
-                            <div class="flex items-center justify-between p-4 border border-gray-300 rounded-lg">
+                            <div class="flex items-center justify-between p-4 border border-gray-300  ">
                                 <div>
                                     <p class="font-medium text-gray-800">Two-Factor Authentication (2FA)</p>
                                     <p class="text-gray-600 text-sm">Add an extra layer of security to your account</p>
                                 </div>
-                                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium">
+                                <button class="bg-blue-600 text-white px-6 py-2   hover:bg-blue-700 font-medium">
                                     Enable 2FA
                                 </button>
                             </div>
@@ -501,15 +501,15 @@ require_once 'includes/header.php';
                         <div class="pt-6 border-t">
                             <h3 class="text-lg font-bold text-gray-800 mb-4">Recent Login Activity</h3>
                             <div class="space-y-3">
-                                <div class="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
+                                <div class="flex items-center justify-between p-3 border border-gray-200  ">
                                     <div>
                                         <p class="font-medium text-gray-800">New York, USA</p>
                                         <p class="text-gray-600 text-sm">Chrome on Windows • Just now</p>
                                     </div>
-                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Current</span>
+                                    <span class="bg-green-100 text-green-800 px-3 py-1   text-sm">Current</span>
                                 </div>
                                 
-                                <div class="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
+                                <div class="flex items-center justify-between p-3 border border-gray-200  ">
                                     <div>
                                         <p class="font-medium text-gray-800">London, UK</p>
                                         <p class="text-gray-600 text-sm">Safari on macOS • 2 days ago</p>
@@ -530,12 +530,12 @@ require_once 'includes/header.php';
                         <!-- Account Deletion -->
                         <div class="pt-6 border-t">
                             <h3 class="text-lg font-bold text-gray-800 mb-4">Danger Zone</h3>
-                            <div class="p-4 border border-red-300 rounded-lg bg-red-50">
+                            <div class="p-4 border border-red-300   bg-red-50">
                                 <p class="font-medium text-red-800 mb-2">Delete Account</p>
                                 <p class="text-red-700 text-sm mb-4">Once you delete your account, there is no going back. Please be certain.</p>
                                 <button type="button" 
                                         onclick="confirmAccountDeletion()"
-                                        class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 font-medium">
+                                        class="bg-red-600 text-white px-6 py-2   hover:bg-red-700 font-medium">
                                     Delete Account
                                 </button>
                             </div>
