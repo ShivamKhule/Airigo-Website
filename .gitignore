@@ -5,6 +5,7 @@
 
 # Firebase credentials
 config/firebase-credentials.json
+*.firebase-credentials.json
 
 # Logs
 logs/
