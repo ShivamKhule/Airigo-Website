@@ -379,9 +379,9 @@ require_once 'includes/header.php';
             <div class="hidden md:grid md:grid-cols-3 gap-8 lg:gap-12">
                 <div
                     class="group relative bg-white   shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-4">
-                    <div
+                    <!-- <div
                         class="absolute inset-0 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    </div>
+                    </div> -->
                     <div
                         class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500  ">
                     </div>
@@ -491,9 +491,9 @@ require_once 'includes/header.php';
                         <!-- John Carter -->
                         <div
                             class="group relative bg-white   shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl">
-                            <div
+                            <!-- <div
                                 class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            </div>
+                            </div> -->
                             <div
                                 class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500  ">
                             </div>
@@ -520,9 +520,9 @@ require_once 'includes/header.php';
                         <!-- Sarah Johnson -->
                         <div
                             class="group relative bg-white   shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl">
-                            <div
+                            <!-- <div
                                 class="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            </div>
+                            </div> -->
                             <div
                                 class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500  ">
                             </div>
@@ -549,9 +549,9 @@ require_once 'includes/header.php';
                         <!-- Michael Rodriguez -->
                         <div
                             class="group relative bg-white   shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl">
-                            <div
+                            <!-- <div
                                 class="absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            </div>
+                            </div> -->
                             <div
                                 class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500  ">
                             </div>
