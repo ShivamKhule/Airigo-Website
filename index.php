@@ -186,9 +186,19 @@ $gradientClasses = [
     <!-- Job Categories -->
     <section class="py-20 bg-gradient-to-b from-slate-200 to-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-14 text-gray-800">
-                Browse Jobs by Category
-            </h2>
+            <!-- Section Header -->
+            <div class="text-center mb-12 md:mb-20 max-w-3xl mx-auto">
+                <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold   bg-blue-100 text-blue-700">
+                    Browse Jobs by Category
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Discover opportunities tailored to your skills
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600">
+                    Explore a wide range of job categories to find the perfect role that matches your expertise and
+                    career goals.
+                </p>
+            </div>
 
             <!-- Two-column premium layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -320,7 +330,8 @@ $gradientClasses = [
                     Making things easier for you
                 </h2>
                 <p class="text-lg md:text-xl text-gray-600">
-                    Every user should know, how to use our platform. It's designed to make your job search or hiring process easier.
+                    Every user should know, how to use our platform. It's designed to make your job search or hiring
+                    process easier.
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -417,84 +428,21 @@ $gradientClasses = [
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <!-- <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Success Stories</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8   shadow-lg">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
-                            alt="Sarah Johnson" class="w-16 h-16   mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
-                            <p class="text-gray-600">Senior Pilot at Airigo</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic mb-4">"Airigojobs helped me land my dream job as a senior pilot. The
-                        platform connected me with the right opportunities and made the application process seamless."
-                    </p>
-                    <div class="text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8   shadow-lg">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-                            alt="Michael Chen" class="w-16 h-16   mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Michael Chen</h4>
-                            <p class="text-gray-600">HR Manager at SkyJet</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic mb-4">"As a recruiter, Airigojobs has been invaluable for finding
-                        qualified candidates. The platform's filtering tools help us find the perfect fit for every
-                        position."</p>
-                    <div class="text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8   shadow-lg">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
-                            alt="Maria Rodriguez" class="w-16 h-16   mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Maria Rodriguez</h4>
-                            <p class="text-gray-600">Flight Attendant</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic mb-4">"I found my current position through Airigojobs. The job alerts
-                        feature kept me updated on new opportunities, and the application tracking was very helpful."
-                    </p>
-                    <div class="text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Success Stories / Testimonials Infinite Continuous Scrolling Marquee -->
     <section class="py-20 bg-gray-50 overflow-hidden">
         <div class="container mx-auto px-4 pb-10">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Success Stories</h2>
-                <p class="mt-4 text-lg text-gray-600">Hear from professionals who found their dream roles through
-                    Airigojobs</p>
+            <!-- Section Header -->
+            <div class="text-center mb-12 md:mb-20 max-w-3xl mx-auto">
+                <span class="inline-block px-4 py-2 mb-4 text-sm font-semibold   bg-blue-100 text-blue-700">
+                    Success Stories
+                </span>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                    Real people, real results
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600">
+                    Join thousands of professionals who have found their ideal job or hired top talent through our
+                    platform.
+                </p>
             </div>
 
             <!-- Infinite Scrolling Container -->
@@ -559,7 +507,7 @@ $gradientClasses = [
 
                     // Render each testimonial card (duplicated for seamless loop)
                     foreach (array_merge($testimonials, $testimonials) as $testimonial): ?>
-                        <div class="flex-shrink-0 w-1/3">
+                        <div class="flex-shrink-0 w-[90vw] sm:w-[70vw] md:w-[45vw] lg:w-[32vw] xl:w-[30vw]">
                             <div class="bg-white shadow-xl p-4 h-full flex flex-col justify-between">
                                 <div>
                                     <div class="flex justify-center mb-6">

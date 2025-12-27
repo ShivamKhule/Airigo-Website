@@ -70,20 +70,27 @@
                 </div>
             </div>
             
-            <!-- Newsletter -->
+            <!-- App Download and Newsletter -->
             <div class="mt-12 pt-12 border-t border-gray-800">
                 <div class="flex flex-col md:flex-row md:items-center justify-between">
-                    <div class="mb-6 md:mb-0">
-                        <h3 class="text-xl font-bold mb-2">Subscribe to our Newsletter</h3>
-                        <p class="text-gray-400">Get the latest job alerts and career tips</p>
+                    <div class="mb-8 md:mb-0 md:w-1/2">
+                        <h3 class="text-xl font-bold mb-4">Get Our Mobile App</h3>
+                        <p class="text-gray-400 mb-4">Download our mobile app to search and apply for jobs on the go!</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.aptitsolutions.airigo" target="_blank" class="inline-block">
+                            <img src="<?php echo $baseUrl; ?>/assets/images/Playstore QR.png" alt="Download Airigojobs App" class="w-32 h-32 object-contain">
+                        </a>
                     </div>
-                    <div class="flex">
-                        <input type="email" 
-                               placeholder="Your email address" 
-                               class="px-6 py-3 bg-gray-800 text-white   focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-80">
-                        <button class="bg-blue-600 text-white px-6 py-3   hover:bg-blue-700 font-medium">
-                            Subscribe
-                        </button>
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-bold mb-4">Subscribe to our Newsletter</h3>
+                        <p class="text-gray-400">Get the latest job alerts and career tips</p>
+                        <div class="flex mt-4">
+                            <input type="email" 
+                                   placeholder="Your email address" 
+                                   class="px-6 py-3 bg-gray-800 text-white   focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-80">
+                            <button class="bg-blue-600 text-white px-6 py-3   hover:bg-blue-700 font-medium">
+                                Subscribe
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

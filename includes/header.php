@@ -162,18 +162,18 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                             <span>Search Jobs</span>
                         </a>
                         <?php if (!$isLoggedIn): ?>
-                        <a href="<?php echo $baseUrl; ?>/companies.php"
-                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
-                            <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
-                            <span>Companies</span>
-                        </a>
-                    <?php else: ?>
-                        <a href="<?php echo $baseUrl; ?>/company-profile.php"
-                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
-                            <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
-                            <span>Companies</span>
-                        </a>
-                    <?php endif; ?>
+                            <a href="<?php echo $baseUrl; ?>/companies.php"
+                                class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
+                                <span>Companies</span>
+                            </a>
+                        <?php else: ?>
+                            <a href="<?php echo $baseUrl; ?>/company-profile.php"
+                                class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                                <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
+                                <span>Companies</span>
+                            </a>
+                        <?php endif; ?>
                         <a href="<?php echo $baseUrl; ?>/about.php"
                             class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
                             <i class="fas fa-info-circle text-lg opacity-70 group-hover:opacity-100"></i>
@@ -189,6 +189,12 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                             <a href="<?php echo $baseUrl; ?>/register.php?type=jobseeker"
                                 class="px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
                                 Sign Up Free
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.aptitsolutions.airigo"
+                                target="_blank"
+                                class="flex items-center space-x-1 px-4 py-2.5 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300">
+                                <i class="fab fa-google-play text-lg"></i>
+                                <span>App</span>
                             </a>
                         </div>
                     <?php else: ?>
@@ -357,20 +363,20 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                             <span class="font-medium">Search Jobs</span>
                         </a>
                         <?php if (!$isLoggedIn): ?>
-                        <a href="<?php echo $baseUrl; ?>/companies.php"
-                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
-                            <i
-                                class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
-                            <span class="font-medium">Companies</span>
-                        </a>
-                    <?php else: ?>
-                        <a href="<?php echo $baseUrl; ?>/company-profile.php"
-                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
-                            <i
-                                class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
-                            <span class="font-medium">Companies</span>
-                        </a>
-                    <?php endif; ?>
+                            <a href="<?php echo $baseUrl; ?>/companies.php"
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                <i
+                                    class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
+                                <span class="font-medium">Companies</span>
+                            </a>
+                        <?php else: ?>
+                            <a href="<?php echo $baseUrl; ?>/company-profile.php"
+                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                                <i
+                                    class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
+                                <span class="font-medium">Companies</span>
+                            </a>
+                        <?php endif; ?>
                         <a href="<?php echo $baseUrl; ?>/about.php"
                             class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
                             <i
@@ -387,6 +393,11 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                         <a href="<?php echo $baseUrl; ?>/register.php?type=jobseeker"
                             class="block px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md transition-all duration-300 text-center">
                             Sign Up Free
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.aptitsolutions.airigo" target="_blank"
+                            class="block px-4 py-3 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                            <i class="fab fa-google-play"></i>
+                            <span>Get our App</span>
                         </a>
                     </div>
                 <?php else: ?>
@@ -484,26 +495,58 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
     <main class="min-h-screen">
 
         <script>
-            // Mobile menu toggle with animation
             document.addEventListener('DOMContentLoaded', function () {
                 const mobileMenuButton = document.getElementById('mobileMenuButton');
                 const mobileMenu = document.getElementById('mobileMenu');
                 const mobileMenuIcon = document.getElementById('mobileMenuIcon');
 
+                let isMobileMenuOpen = false;
+
                 if (mobileMenuButton && mobileMenu) {
-                    mobileMenuButton.addEventListener('click', function () {
-                        mobileMenu.classList.toggle('hidden');
-                        if (mobileMenu.classList.contains('hidden')) {
-                            mobileMenuIcon.classList.remove('fa-times');
-                            mobileMenuIcon.classList.add('fa-bars');
-                        } else {
+                    mobileMenuButton.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        isMobileMenuOpen = !isMobileMenuOpen;
+
+                        if (isMobileMenuOpen) {
+                            mobileMenu.classList.remove('hidden');
                             mobileMenuIcon.classList.remove('fa-bars');
                             mobileMenuIcon.classList.add('fa-times');
+                        } else {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenuIcon.classList.remove('fa-times');
+                            mobileMenuIcon.classList.add('fa-bars');
                         }
                     });
                 }
 
-                // User dropdown functionality
+                // Close menu when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (
+                        isMobileMenuOpen &&
+                        !mobileMenu.contains(e.target) &&
+                        !mobileMenuButton.contains(e.target)
+                    ) {
+                        isMobileMenuOpen = false;
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    }
+                });
+
+                // Close menu when clicking any mobile link
+                document.querySelectorAll('#mobileMenu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        isMobileMenuOpen = false;
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    });
+                });
+
+                /* ---------- USER DROPDOWN ---------- */
+
                 const dropdownButton = document.getElementById('dropdownButton');
                 const dropdownMenu = document.getElementById('dropdownMenu');
                 const dropdownIcon = document.getElementById('dropdownIcon');
@@ -515,29 +558,11 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                         dropdownIcon.classList.toggle('rotate-180');
                     });
 
-                    // Close dropdown when clicking outside
-                    document.addEventListener('click', function (e) {
-                        if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                            dropdownMenu.classList.add('hidden');
-                            dropdownIcon.classList.remove('rotate-180');
-                        }
-                    });
-
-                    // Prevent dropdown close when clicking inside
-                    dropdownMenu.addEventListener('click', function (e) {
-                        e.stopPropagation();
+                    document.addEventListener('click', function () {
+                        dropdownMenu.classList.add('hidden');
+                        dropdownIcon.classList.remove('rotate-180');
                     });
                 }
-
-                // Close mobile menu when clicking a link
-                const mobileLinks = document.querySelectorAll('#mobileMenu a');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', function () {
-                        mobileMenu.classList.add('hidden');
-                        mobileMenuIcon.classList.remove('fa-times');
-                        mobileMenuIcon.classList.add('fa-bars');
-                    });
-                });
             });
         </script>
 
