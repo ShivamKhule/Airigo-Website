@@ -129,10 +129,6 @@ foreach ($allJobs as $job) {
                                             </div>
                                         </div>
                                         
-                                        <p class="text-gray-600 mb-4 line-clamp-2">
-                                            <?= htmlspecialchars(substr($job['description'], 0, 200)) ?>...
-                                        </p>
-                                        
                                         <div class="flex flex-wrap gap-2 mb-4">
                                             <?php 
                                             $skills = explode(',', $job['skills']);
@@ -147,10 +143,6 @@ foreach ($allJobs as $job) {
                                 </div>
                                 
                                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center pt-4 border-t border-gray-100">
-                                    <span class="text-sm text-gray-500 mb-3 md:mb-0">
-                                        <i class="fas fa-calendar-alt mr-1"></i>
-                                        Posted <?= timeAgo($job['createdAt']) ?>
-                                    </span>
                                     <div class="flex space-x-3">
                                         <button class="flex items-center px-4 py-2 border border-gray-300   hover:bg-gray-50 transition duration-300 text-sm">
                                             <i class="far fa-heart mr-2"></i>Save

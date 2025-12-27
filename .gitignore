@@ -65,3 +65,4 @@ phpunit.xml
 
 # Compiled CSS (if using preprocessors)
 *.css.map
+config/firebase-credentials.json

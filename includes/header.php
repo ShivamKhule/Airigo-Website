@@ -4,6 +4,15 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+$currentPage = basename($_SERVER['PHP_SELF']);
+function navActive(array $pages)
+{
+    $current = basename($_SERVER['PHP_SELF']);
+    return in_array($current, $pages)
+        ? 'text-primary-600 bg-primary-50 border-b-2 border-primary-600'
+        : 'text-secondary-700 hover:text-primary-600 hover:bg-primary-50';
+}
+
 // Include required files
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/../config/database.php';
@@ -17,6 +26,7 @@ $userName = $isLoggedIn ? $_SESSION['user_name'] : '';
 $userRole = $isLoggedIn ? $_SESSION['user_role'] : '';
 $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,16 +135,13 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                 <a href="<?php echo $baseUrl; ?>/" class="flex items-center space-x-3 group">
                     <div
                         class="w-20 h-12 rounded-lg bg-gradient-to-br from-primary-100 to-primary-300 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 overflow-hidden">
-                        <!-- Correct HTML image tag -->
-                        <!-- <img src="<?php echo $baseUrl; ?>/assets/images/airigojobslogo.png" alt="AirigoJobs Logo"
-                            class="w-12 h-12 object-contain" /> -->
                         <img src="<?php echo $baseUrl; ?>/assets/logos/Airigo jobs logo Trnsp.png" alt="AirigoJobs Logo"
                             class="w-16 h-16 object-contain" />
                     </div>
 
                     <div class="flex flex-col">
                         <span class="text-2xl font-bold text-primary-700 leading-tight">
-                            Airigo<span class="text-secondary-800">Jobs</span>
+                            Airigo<span class="text-secondary-800">jobs</span>
                         </span>
                         <span class="text-xs text-secondary-600 font-medium -mt-1">
                             Airline & Hospitality Careers
@@ -146,24 +153,24 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                 <div class="hidden lg:flex items-center space-x-1">
                     <?php if (!$isLoggedIn): ?>
                         <!-- Public Navigation -->
-                        <a href="<?php echo $baseUrl; ?>/"
-                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                        <a href="<?php echo $baseUrl; ?>/" class="px-4 py-3 font-medium transition-all duration-200 flex items-center space-x-2 group
+                            <?= navActive(['index.php']) ?>">
                             <i class="fas fa-home text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>Home</span>
                         </a>
-                        <a href="<?php echo $baseUrl; ?>/browse-jobs.php"
-                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                        <a href="<?php echo $baseUrl; ?>/browse-jobs.php" class="px-4 py-3 font-medium transition-all duration-200 flex items-center space-x-2 group
+                            <?= navActive(['browse-jobs.php']) ?>">
                             <i class="fas fa-briefcase text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>Browse Jobs</span>
                         </a>
-                        <a href="<?php echo $baseUrl; ?>/job-search.php"
-                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                        <a href="<?php echo $baseUrl; ?>/job-search.php" class="px-4 py-3 font-medium transition-all duration-200 flex items-center space-x-2 group
+                            <?= navActive(['job-search.php']) ?>">
                             <i class="fas fa-search text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>Search Jobs</span>
                         </a>
                         <?php if (!$isLoggedIn): ?>
-                            <a href="<?php echo $baseUrl; ?>/companies.php"
-                                class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
+                            <a href="<?php echo $baseUrl; ?>/companies.php" class="px-4 py-3 font-medium transition-all duration-200 flex items-center space-x-2 group
+                                <?= navActive(['companies.php']) ?>">
                                 <i class="fas fa-building text-lg opacity-70 group-hover:opacity-100"></i>
                                 <span>Companies</span>
                             </a>
@@ -174,9 +181,9 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                                 <span>Companies</span>
                             </a>
                         <?php endif; ?>
-                        <a href="<?php echo $baseUrl; ?>/about.php"
-                            class="px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 font-medium transition-all duration-200 flex items-center space-x-2 group">
-                            <i class="fas fa-info-circle text-lg opacity-70 group-hover:opacity-100"></i>
+                        <a href="<?php echo $baseUrl; ?>/about.php" class="px-4 py-3 font-medium transition-all duration-200 flex items-center space-x-2 group
+                                <?= navActive(['about.php']) ?>"><i
+                                class="fas fa-info-circle text-lg opacity-70 group-hover:opacity-100"></i>
                             <span>About</span>
                         </a>
 
@@ -344,27 +351,27 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                 <?php if (!$isLoggedIn): ?>
                     <!-- Public Mobile Menu -->
                     <div class="space-y-1">
-                        <a href="<?php echo $baseUrl; ?>/"
-                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                        <a href="<?php echo $baseUrl; ?>/" class="flex items-center space-x-3 px-4 py-3 transition-colors duration-200 group
+                            <?= navActive(['index.php']) ?>">
                             <i
                                 class="fas fa-home text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Home</span>
                         </a>
-                        <a href="<?php echo $baseUrl; ?>/browse-jobs.php"
-                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                        <a href="<?php echo $baseUrl; ?>/browse-jobs.php" class="flex items-center space-x-3 px-4 py-3 transition-colors duration-200 group
+                            <?= navActive(['browse-jobs.php']) ?>">
                             <i
                                 class="fas fa-briefcase text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Browse Jobs</span>
                         </a>
-                        <a href="<?php echo $baseUrl; ?>/job-search.php"
-                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                        <a href="<?php echo $baseUrl; ?>/job-search.php" class="flex items-center space-x-3 px-4 py-3 transition-colors duration-200 group
+                            <?= navActive(['job-search.php']) ?>">
                             <i
                                 class="fas fa-search text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">Search Jobs</span>
                         </a>
                         <?php if (!$isLoggedIn): ?>
-                            <a href="<?php echo $baseUrl; ?>/companies.php"
-                                class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                            <a href="<?php echo $baseUrl; ?>/companies.php" class="flex items-center space-x-3 px-4 py-3 transition-colors duration-200 group
+                                <?= navActive(['companies.php']) ?>">
                                 <i
                                     class="fas fa-building text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                                 <span class="font-medium">Companies</span>
@@ -377,8 +384,8 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                                 <span class="font-medium">Companies</span>
                             </a>
                         <?php endif; ?>
-                        <a href="<?php echo $baseUrl; ?>/about.php"
-                            class="flex items-center space-x-3 px-4 py-3 text-secondary-700 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 group">
+                        <a href="<?php echo $baseUrl; ?>/about.php" class="flex items-center space-x-3 px-4 py-3 transition-colors duration-200 group
+                            <?= navActive(['about.php']) ?>">
                             <i
                                 class="fas fa-info-circle text-lg w-6 text-center text-primary-500 group-hover:text-primary-600"></i>
                             <span class="font-medium">About</span>
