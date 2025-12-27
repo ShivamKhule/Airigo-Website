@@ -77,7 +77,7 @@ require_once 'includes/header.php';
                         If you have questions about this Privacy Policy, please contact us at:
                         <br><br>
                         Email: support@airigojobs.com<br>
-                        Address: 123 Airline Avenue, Suite 500, New York, NY 10001
+                        Address: Office No: 301, 3rd Floor, Walchand House Happy Colony Lane-1, Warje Malwadi Rd, Kothrud, Pune, Maharashtra 411038
                     </p>
                 </div>
             </div>

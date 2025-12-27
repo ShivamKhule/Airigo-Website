@@ -90,11 +90,11 @@ require_once 'includes/header.php';
                         </div>
                         <div>
                             <h3 class="font-semibold text-blue-800 mb-2">Phone Support</h3>
-                            <p class="text-blue-700">+1 (555) 123-4567</p>
+                            <p class="text-blue-700">+91 9154829627</p>
                         </div>
                         <div>
                             <h3 class="font-semibold text-blue-800 mb-2">Emergency Line</h3>
-                            <p class="text-blue-700">+1 (555) 987-6543</p>
+                            <p class="text-blue-700">+91 9154829627</p>
                         </div>
                     </div>
                 </div>

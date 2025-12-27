@@ -81,7 +81,7 @@ include 'includes/header.php';
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Filters Sidebar -->
             <div class="lg:w-1/4">
-                <div class="bg-white shadow-md p-6">
+                <div class="bg-white   shadow-md p-6 sticky top-24">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Filter Jobs</h3>
                     
                     <form method="GET">

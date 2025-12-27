@@ -36,8 +36,8 @@
                     <a href="#" class="w-10 h-10 bg-gray-800   flex items-center justify-center hover:bg-blue-700">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://www.instagram.com/airigojobs/"
-                        class="w-10 h-10 bg-gray-800   flex items-center justify-center hover:bg-pink-600">
+                    <a href="https://www.instagram.com/airigojobs/" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 bg-gray-800 flex items-center justify-center hover:bg-pink-600">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>

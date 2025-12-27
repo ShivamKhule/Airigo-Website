@@ -189,14 +189,14 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
 
                         <!-- Auth Buttons -->
                         <div class="flex items-center space-x-3 ml-4 pl-4 border-l border-gray-200">
-                            <a href="<?php echo $baseUrl; ?>/login.php"
+                            <!-- <a href="<?php echo $baseUrl; ?>/login.php"
                                 class="px-5 py-2.5 text-primary-600 hover:text-primary-700 font-medium transition-all duration-200 hover:bg-primary-50 border border-primary-100">
                                 Login
                             </a>
                             <a href="<?php echo $baseUrl; ?>/register.php?type=jobseeker"
                                 class="px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
                                 Sign Up Free
-                            </a>
+                            </a> -->
                             <a href="https://play.google.com/store/apps/details?id=com.aptitsolutions.airigo"
                                 target="_blank"
                                 class="flex items-center space-x-1 px-4 py-2.5 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300">
@@ -393,14 +393,14 @@ $userInitial = $isLoggedIn ? substr($_SESSION['user_name'], 0, 1) : 'U';
                     </div>
 
                     <div class="mt-6 pt-6 border-t border-gray-200 space-y-3">
-                        <a href="<?php echo $baseUrl; ?>/login.php"
+                        <!-- <a href="<?php echo $baseUrl; ?>/login.php"
                             class="block px-4 py-3 text-primary-600 hover:text-primary-700 font-medium hover:bg-primary-50 border border-primary-100 transition-colors duration-200 text-center">
                             Login
                         </a>
                         <a href="<?php echo $baseUrl; ?>/register.php?type=jobseeker"
                             class="block px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium hover:from-primary-700 hover:to-primary-800 shadow-md transition-all duration-300 text-center">
                             Sign Up Free
-                        </a>
+                        </a> -->
                         <a href="https://play.google.com/store/apps/details?id=com.aptitsolutions.airigo" target="_blank"
                             class="block px-4 py-3 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 text-center flex items-center justify-center space-x-2">
                             <i class="fab fa-google-play"></i>

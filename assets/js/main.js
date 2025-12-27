@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeComponents();
     setupEventListeners();
-    checkUserSession();
+    // checkUserSession();
 });
 
 /**
@@ -1158,7 +1158,7 @@ function initSearch() {
 document.addEventListener('DOMContentLoaded', function() {
     initializeComponents();
     setupEventListeners();
-    checkUserSession();
+    // checkUserSession();
     initScrollToTop();
     initDarkMode();
     initSearch();
